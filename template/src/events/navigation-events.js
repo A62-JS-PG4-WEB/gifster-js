@@ -1,3 +1,6 @@
+import { HOME } from "../common/constant.js";
+
+
 export const loadPage = (page = '') => {
 
     switch (page) {
