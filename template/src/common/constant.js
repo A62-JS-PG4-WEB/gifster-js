@@ -1,8 +1,8 @@
 export const HOME = 'home';
  
-export const UPLOAD = 'upload';
+export const UPLOAD_GIF = 'upload';
  
-export const UPLOADED = 'uploaded';
+export const UPLOADED_GIFS = 'uploaded';
  
 export const FAVORITE = 'favorite';
  
