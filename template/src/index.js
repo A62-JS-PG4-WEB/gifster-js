@@ -15,17 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
       renderCategory(+e.target.getAttribute('data-category-id'));
     }
 
-    // show movie events
-    if (e.target.classList.contains('view-movie-btn')) {
-      renderMovieDetails(+e.target.getAttribute('data-movie-id'));
+    // show gif events
+    if (e.target.classList.contains('gif-simple')) {
+      renderMovieDetails(+e.target.getAttribute('data-gif-id'));
     }
 
     // toggle favorite event
-    if (e.target.classList.contains('favorite')) {
-      toggleFavoriteStatus(+e.target.getAttribute('data-movie-id'));
-    }
+//     if (e.target.classList.contains('favorite')) {
+//       toggleFavoriteStatus(+e.target.getAttribute('data-movie-id'));
+//     }
 
-  });
+//   });
 
   // search events
   q('input#search').addEventListener('input', e => {
@@ -35,7 +35,4 @@ document.addEventListener('DOMContentLoaded', () => {
   loadPage(HOME);
 
 });
-
-    
-})
 
