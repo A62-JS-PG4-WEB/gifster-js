@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //       toggleFavoriteStatus(+e.target.getAttribute('data-movie-id'));
 //     }
 
-//   });
+   });
 
   // search events
   q('input#search').addEventListener('input', e => {
