@@ -1,3 +1,7 @@
+import { HOME } from "./common/constant"; 
+import { renderSearchItems } from "./events/search-events";
+import { q } from "./events/helpers";
+
 document.addEventListener('DOMContentLoaded', () => {
   
 
@@ -37,5 +41,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
     
-})
+
 
