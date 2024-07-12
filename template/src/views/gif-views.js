@@ -1,3 +1,6 @@
+
+//import renderFavoriteStatus when implemented
+
 export const toGifSimple = (gif) => `
 <div class="gif-simple">
   <h1>${gif.title}</h1>
