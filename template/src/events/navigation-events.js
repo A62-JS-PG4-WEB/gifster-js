@@ -1,8 +1,11 @@
-import { HOME } from "../common/constant.js";
-import { setActiveNav } from "./helpers.js"
+import { HOME, FAVORITE, UPLOAD_GIF, ABOUT, CONTAINER_SELECTOR, UPLOADED_GIFS} from "../common/constant.js";
+import { q, setActiveNav } from "./helpers.js"
 import { fetchTrendingGifs, loadGifDetails } from "../requests/request-service.js";
 import { toHomeView } from "../views/home-view.js";
 import { toGifDetails } from "../views/gif-views.js";
+import { toUploadView } from "../views/upload-view.js";
+import { toUploadedView } from "../views/uploaded-view.js";
+
 
 
 export const loadPage = (page = '') => {
@@ -13,18 +16,18 @@ export const loadPage = (page = '') => {
             setActiveNav(HOME);
             return renderHome();
 
-        case FAVORITES:
-            setActiveNav(FAVORITES);
+        case FAVORITE:
+            setActiveNav(FAVORITE);
             return renderFavorites();
 
         case UPLOAD_GIF:
             setActiveNav(UPLOAD_GIF);
             return renderUploadGif();
 
-            //missing implementation:
-        // case UPLOADED_GIFS:
-        //     setActiveNav(UPLOADED_GIFS);
-        //     return renderUploaded();
+            
+        case UPLOADED_GIFS:
+            setActiveNav(UPLOADED_GIFS);
+            return renderUploaded();
 
         case ABOUT:
             setActiveNav(ABOUT);
@@ -62,12 +65,14 @@ export const renderGifDetails = (id = null) => {
     .catch(error => console.error(error.message))
   };
 
-  export const renderUploadGif = (id = null) => {
-    uploadGif(id)
-    .then(gif => q(CONTAINER_SELECTOR).innerHTML = toGifDetails(gif.data))
-    .catch(error => console.error(error.message))
+  export const renderUploadGif = async() => {
+    q(CONTAINER_SELECTOR).innerHTML = toUploadView();
   };
 
-  const renderAbout = () => {
+  export const renderUploaded = async() => {
+    q(CONTAINER_SELECTOR).innerHTML = toUploadedView();
+  };
+
+  export const renderAbout = async()=> {
     q(CONTAINER_SELECTOR).innerHTML = toAboutView();
   };
