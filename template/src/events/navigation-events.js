@@ -5,7 +5,7 @@ import { toHomeView } from "../views/home-view.js";
 import { toGifDetails } from "../views/gif-views.js";
 import { toUploadView } from "../views/upload-view.js";
 import { toUploadedView } from "../views/uploaded-view.js";
-
+import { toFavoritesGifs } from "../views/favorites-view.js";
 
 
 export const loadPage = (page = '') => {
@@ -76,3 +76,7 @@ export const renderGifDetails = (id = null) => {
   export const renderAbout = async()=> {
     q(CONTAINER_SELECTOR).innerHTML = toAboutView();
   };
+
+  export const renderFavorites = async() => {
+    q(CONTAINER_SELECTOR).innerHTML = toFavoritesGifs();
+  }
