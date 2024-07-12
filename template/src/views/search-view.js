@@ -5,7 +5,7 @@ export const toSearchView = (gifs, searchTerm) => `
   <h1>Gifs found for "${searchTerm}":</h1>
   <div class="content">
 
-    ${gifs.map(toGifSimple).join('\n') || '<p>Add some gifs to favorites to see them here.</p>'}
+    ${gifs.map(toGifSimple).join('\n') || '<p>None of our gifs match your criteria.</p>'}
 
   </div>
 </div>s
