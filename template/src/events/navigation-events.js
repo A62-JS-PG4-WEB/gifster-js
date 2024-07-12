@@ -52,3 +52,19 @@ export const renderHome = async () => {
         console.error('Error displaying trending GIFs', error);
     }
 };
+
+export const renderGifDetails = (id = null) => {
+    loadGifDetails(id)
+    .then(gif => q(CONTAINER_SELECTOR).innerHTML = toGifDetails(gif.data))
+    .catch(error => console.error(error.message))
+  };
+
+  export const renderUploadGif = (id = null) => {
+    loadGifDetails(id)
+    .then(gif => q(CONTAINER_SELECTOR).innerHTML = toGifDetails(gif.data))
+    .catch(error => console.error(error.message))
+  };
+
+  const renderAbout = () => {
+    q(CONTAINER_SELECTOR).innerHTML = toAboutView();
+  };
