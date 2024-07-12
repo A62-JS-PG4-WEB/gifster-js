@@ -8,7 +8,7 @@ export const toGifSimple = (gif) => `
 const toGifDetails = (gif) => `
 <div class="gif-detailed">
 //   <div class="poster">
-//     <img src="${gif.img}">
+//     <img src="${gif.images.original.url}">
   </div>
   <div class="gif-info">
     <p>Title: ${gif.title}</p>
