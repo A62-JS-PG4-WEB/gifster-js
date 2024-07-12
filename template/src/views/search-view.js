@@ -8,5 +8,5 @@ export const toSearchView = (gifs, searchTerm) => `
     ${gifs.map(toGifSimple).join('\n') || '<p>None of our gifs match your criteria.</p>'}
 
   </div>
-</div>s
+</div>
 `;

@@ -5,7 +5,7 @@ export const toUploadedView = () => `
     <p>Your uploaded Gifs</p>
     <div class="content">
 
-   '<p>No uploaded gifs.</p>'}
+   <p>No uploaded gifs.</p>
 
   </div>
 </div>
