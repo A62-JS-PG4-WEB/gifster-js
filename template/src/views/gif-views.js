@@ -10,15 +10,15 @@ export const toGifSimple = (gif) => `
 `;
 
 export const toGifDetails = (gif) => `
-<div class="gif-detailed">
+<div class="gif-detailed-info">
   <div class="poster">
     <img src="${gif.images.fixed_height.url}">
   </div>
   <div class="gif-info">
-    <p>Title: ${gif.title}</p>
+    <p>${gif.title}</p>
     <p>user: ${gif.username}</p>
-    <p>Source: ${gif.source || '<p>Source not provided.</p>'}</p>
-    class:"data-gif-id"="${gif.id}"
+    <p>Source: ${gif.source ? `<a href="${gif.source}" target="_blank">${gif.source}</a>` : 'Source not provided.'}</p>
+    
     
   </div>
 </div>
