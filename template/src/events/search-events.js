@@ -1,7 +1,8 @@
-import { CONTAINER_SELECTOR } from "../common/constant";
-import { loadSearchGifs } from "../requests/request-service";
-import { toSearchView } from "../views/search-view";
-import { q } from "./helpers";
+import { CONTAINER_SELECTOR } from "../common/constant.js";
+import { loadSearchGifs } from "../requests/request-service.js";
+import { toSearchView } from "../views/search-view.js";
+import { q } from "./helpers.js";
+
 export const renderSearchItems = (searchTerm) => {
   loadSearchGifs(searchTerm)
     .then(gifs => q(CONTAINER_SELECTOR).innerHTML = toSearchView(gifs, searchTerm));

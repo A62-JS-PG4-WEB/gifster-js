@@ -44,10 +44,10 @@ export const uploadGif = (gif) => {
 
 export const loadSearchGifs = (searchTerm = '') => {
 
-try {
-    return fetch(`${API_URL}/gifs/search=${searchTerm}?api_key=${API_KEY}`)
-      .then(response => response.json());
-      
+    try {
+        return fetch(`${API_URL}/gifs/search=${searchTerm}?api_key=${API_KEY}`)
+            .then(response => response.json());
+
     } catch (err) {
         console.error('Error:', err);
     }
@@ -63,5 +63,3 @@ export const fetchTrendingGifs = async () => {
         console.error('Error:', err);
     }
 };
-
-}
