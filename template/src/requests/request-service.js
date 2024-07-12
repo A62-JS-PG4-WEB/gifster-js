@@ -2,7 +2,6 @@ import { API_KEY, API_URL } from "../common/constant.js";
 
 export const loadGifDetails = (gifId) => {
 
-   
     try {
         const url = `${API_URL}/gifs/${gifId}?api_key=${API_KEY}`;
         const loadGifDetails = fetch(url)
@@ -24,11 +23,7 @@ export const uploadGif = (gif) => {
     const formData = new FormData();
     formData.append('file', gif);
 
-
-
     const url = `${API_URL}/${gif}?api_key=${API_KEY}`;
-    
-  
 
     try {
         fetch(url, {
@@ -48,12 +43,25 @@ export const uploadGif = (gif) => {
 }
 
 export const loadSearchGifs = (searchTerm = '') => {
+
 try {
     return fetch(`${API_URL}/gifs/search=${searchTerm}?api_key=${API_KEY}`)
       .then(response => response.json());
       
     } catch (err) {
-    console.error('Error:', err);
+        console.error('Error:', err);
     }
+}
+
+
+export const fetchTrendingGifs = async () => {
+    try {
+        const response = await fetch(`${API_URL}/trending?api_key=${API_KEY}`);
+        const data = await response.json();
+        return data.data;
+    } catch (err) {
+        console.error('Error:', err);
+    }
+};
 
 }
