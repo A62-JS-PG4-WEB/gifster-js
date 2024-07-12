@@ -45,7 +45,7 @@ export const uploadGif = (gif) => {
 export const loadSearchGifs = (searchTerm = '') => {
 
     try {
-        return fetch(`${API_URL}/gifs/search=${searchTerm}?api_key=${API_KEY}`)
+        return fetch(`${API_URL}/search?api_key=${API_KEY}&q=${searchTerm}`)
             .then(response => response.json());
 
     } catch (err) {
@@ -53,6 +53,7 @@ export const loadSearchGifs = (searchTerm = '') => {
     }
 }
 
+//https://api.giphy.com/v1/gifs/search?api_key=N99BMoi9pa2HYOFDWBPXUn4cxO6yZZQU&q=cheeseburgers
 
 export const fetchTrendingGifs = async () => {
     try {
