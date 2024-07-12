@@ -3,7 +3,7 @@ import { API_KEY, API_URL } from "../common/constant.js";
 export const loadGifDetails = (gifId) => {
 
     try {
-        const url = `${API_URL}/gifs/${gifId}?api_key=${API_KEY}`;
+        const url = `${API_URL}/${gifId}?api_key=${API_KEY}`;
         const loadGifDetails = fetch(url)
             .then(response => response.json());
         return loadGifDetails;
@@ -53,7 +53,6 @@ export const loadSearchGifs = (searchTerm = '') => {
     }
 }
 
-//https://api.giphy.com/v1/gifs/search?api_key=N99BMoi9pa2HYOFDWBPXUn4cxO6yZZQU&q=cheeseburgers
 
 export const fetchTrendingGifs = async () => {
     try {
