@@ -1,3 +1,4 @@
+
 import { HOME } from './common/constant.js';
 import { q } from './events/helpers.js';
 import { loadPage } from './events/navigation-events.js';
@@ -29,3 +30,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadPage(HOME);
 });
+
