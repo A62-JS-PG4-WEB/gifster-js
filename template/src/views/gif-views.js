@@ -5,10 +5,10 @@ export const toGifSimple = (gif) => `
 </div>
 `;
 
-const toGifDetails = (gif) => `
+export const toGifDetails = (gif) => `
 <div class="gif-detailed">
 //   <div class="poster">
-//     <img src="${gif.images.original.url}">
+//     <img src="${gif.images.fixed_height.url}">
   </div>
   <div class="gif-info">
     <p>Title: ${gif.title}</p>
