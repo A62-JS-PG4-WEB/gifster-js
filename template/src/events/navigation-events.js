@@ -2,6 +2,7 @@ import { HOME } from "../common/constant.js";
 import { setActiveNav } from "./helpers.js"
 import { fetchTrendingGifs } from "../requests/request-service.js";
 import { toHomeView } from "../views/home-view.js";
+import { toGifDetails, toGifDetails } from "../views/gif-views.js";
 
 export const loadPage = (page = '') => {
 

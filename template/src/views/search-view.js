@@ -1,3 +1,5 @@
+import { toGifSimple } from "./gif-views.js";
+
 export const toSearchView = (gifs, searchTerm) => `
 <div id="search-bar">
   <h1>Gifs found for "${searchTerm}":</h1>
