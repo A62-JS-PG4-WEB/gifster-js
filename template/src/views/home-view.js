@@ -1,17 +1,8 @@
-import { fetchTrendingGifs } from "../requests/request-service.js";
+export const toHomeView = () => `
+    <a class="trending" data-page="trending">Trending GIFS</a>
+    <hr>
+    <section aria-live="polite">
+        <!-- Trending GIFs will be inserted here -->
+    </section>
+`;
 
-export const displayTrendingGifs = async () => {
-    try {
-        const gifs = await fetchTrendingGifs()
-        const section = document.querySelector('section[aria-live="polite"]')
-        section.innerHTML = ''
-        gifs.forEach(gif => {
-            const img = document.createElement('img')
-            img.src = gif.images.fixed_height.url
-            img.alt = gif.title
-            section.appendChild(img)
-        });
-    } catch (error) {
-        console.error('Error displaying trending GIFs', error)
-    }
-};

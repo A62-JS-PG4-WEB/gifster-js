@@ -1,5 +1,7 @@
 import { HOME } from "../common/constant.js";
-
+import { setActiveNav } from "./helpers.js"
+import { fetchTrendingGifs } from "../requests/request-service.js";
+import { toHomeView } from "../views/home-view.js";
 
 export const loadPage = (page = '') => {
 
@@ -29,4 +31,24 @@ export const loadPage = (page = '') => {
         default: return null;
     }
 
+};
+
+
+export const renderHome = async () => {
+    const container = document.querySelector('#container');
+    container.innerHTML = toHomeView();
+
+    const section = container.querySelector('section[aria-live="polite"]');
+
+    try {
+        const gifs = await fetchTrendingGifs();
+        gifs.forEach(gif => {
+            const img = document.createElement('img');
+            img.src = gif.images.fixed_height.url;
+            img.alt = gif.title;
+            section.appendChild(img);
+        });
+    } catch (error) {
+        console.error('Error displaying trending GIFs', error);
+    }
 };
