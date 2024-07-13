@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
             loadPage(e.target.getAttribute('data-page'));
         }
  
+        if (e.target.closest('#logo')){
+            e.preventDefault();
+            loadPage(HOME)
+        }
  
         if (e.target.classList.contains('detailed-func')) {
             const img = e.target.src;
@@ -54,4 +58,4 @@ document.addEventListener('DOMContentLoaded', () => {
     loadPage(HOME);
 });
  
-
+//test

@@ -23,3 +23,4 @@ export const setActiveNav = (page) => {
 //       : `<span class="favorite" data-gif-id="${gifId}">${EMPTY_HEART}</span>`;
 //   };
   
+//test

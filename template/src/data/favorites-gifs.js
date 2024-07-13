@@ -15,4 +15,8 @@
 //   localStorage.setItem('favorite', JSON.stringify(favorites));
 // };
 
+
 // export const getFavorites = () => [...favorites];
+
+
+//test
