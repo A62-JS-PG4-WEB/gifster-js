@@ -9,6 +9,9 @@ import { uploadFile } from './events/upload.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
+//resolved
+
+
     document.addEventListener('click', e => {
 
         if (e.target.classList.contains('nav-link')) {
