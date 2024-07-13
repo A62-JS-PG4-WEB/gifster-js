@@ -5,6 +5,7 @@ import { toHomeView } from "../views/home-view.js";
 import { toGifDetails } from "../views/gif-views.js";
 import { toUploadView } from "../views/upload-view.js";
 import { toFavoritesGifs } from "../views/favorites-view.js";
+import { toAboutView } from "../views/about-view.js"
 
 export const loadPage = (page = '') => {
 
