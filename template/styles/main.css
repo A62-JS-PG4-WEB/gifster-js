@@ -152,3 +152,24 @@ footer {
     color: grey;
     opacity: 0.5;
 }
+
+.gif-simple {
+    margin-bottom: 20px;  
+   border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .gif-image-container {
+    position: relative;
+    overflow: hidden;
+    width: 50%; }
+  
+  .gif-image-container img {
+    width: 50; 
+    height: auto;
+    transition: transform 0.3s ease; }
+  
+  .gif-image-container img:hover {
+    transform: scale(1.2); 
+  }
+
