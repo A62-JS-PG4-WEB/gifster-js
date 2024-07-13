@@ -15,18 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
             loadPage(e.target.getAttribute('data-page'));
         }
 
-
         if (e.target.closest('#logo')) {
             e.preventDefault();
             loadPage(HOME);
         }
-
-        // if (e.target.classList.contains('detailed-func')) {
-        //     const img = e.target.src;
-        //     const imgParts = img.split('/');
-        //     e.preventDefault()
-        //     toGifDetails(imgParts[imgParts.length - 2])
-        // }
 
         if (e.target.classList.contains('detailed-func')) {
             const img = e.target.src;
@@ -34,12 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             renderGifDetails(imgParts[imgParts.length - 2])
         }
-
-        // if (e.target.classList.contains('favorite')) {
-        //     toggleFavoriteStatus(+e.target.getAttribute('data-gif-id'));
-        //   }
-
-
 
     });
 
