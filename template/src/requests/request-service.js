@@ -75,3 +75,4 @@ export const fetchTrendingGifs = async () => {
         console.error('Error:', err);
     }
 };
+//test

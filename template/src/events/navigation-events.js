@@ -73,3 +73,5 @@ export const renderGifDetails = (id = null) => {
 //   Promise.all(favorites.map(id => loadGifDetails(id)))
 //     .then(favoriteGifs => q(CONTAINER_SELECTOR).innerHTML = toFavoritesGifs(favoriteGifs))
 //     .catch(error => console.error(error.message));   }
+
+//test

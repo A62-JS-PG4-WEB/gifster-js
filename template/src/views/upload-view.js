@@ -23,3 +23,5 @@ export const toUploadView = () => `
   ${getUploads().map(gifId => `<div class="grid-item"><img src="https://media.giphy.com/media/${gifId}/giphy.gif"></div>`).join(`\n`)}
 </div>
 `;
+
+//test

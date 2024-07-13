@@ -41,3 +41,5 @@ const displayUploadedGifs = () => {
     uploadedDiv.appendChild(imgElement);
   });
 };
+
+//test
