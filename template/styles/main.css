@@ -170,6 +170,6 @@ footer {
     transition: transform 0.3s ease; }
   
   .gif-image-container img:hover {
-    transform: scale(1.2); 
+    transform: scale(1.1); 
   }
 

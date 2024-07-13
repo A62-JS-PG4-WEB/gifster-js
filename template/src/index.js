@@ -8,12 +8,6 @@ import { toGifDetails } from './views/gif-views.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // document.addEventListener('keydown', (e) => {
-    //     if (e.target.classList.contains('search-bar') && e.key === 'Enter') {
-    //         renderSearchItems(e.target.value)
-    //     }
-    // })
-
     document.addEventListener('click', e => {
 
         if (e.target.classList.contains('nav-link')) {
