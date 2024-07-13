@@ -1,5 +1,5 @@
 import { HOME, FAVORITE, UPLOAD_GIF, ABOUT, CONTAINER_SELECTOR, UPLOADED_GIFS } from "../common/constant.js";
-import { q, setActiveNav } from "./helpers.js"
+import { q, qs, setActiveNav } from "./helpers.js"
 import { fetchTrendingGifs, loadGifDetails } from "../requests/request-service.js";
 import { toHomeView } from "../views/home-view.js";
 import { toGifDetails } from "../views/gif-views.js";
@@ -33,8 +33,9 @@ export const loadPage = (page = '') => {
 
 };
 
+
 export const renderHome = () => {
-    const container = q(CONTAINER_SELECTOR);
+    const container = q('#container');
     container.innerHTML = toHomeView();
 
     const section = q('section[aria-live="polite"]');
@@ -49,6 +50,7 @@ export const renderHome = () => {
                 img.dataset.gifId = gif.id;
                 section.appendChild(img);
             });
+
 
             const gifItems = qs('.gif-item');
             gifItems.forEach(gif => {
@@ -80,6 +82,9 @@ export const renderAbout = async () => {
 export const renderFavorites = async () => {
     q(CONTAINER_SELECTOR).innerHTML = await toFavoritesGifs()
 }
+
+
+
 //     const favorites = getFavorites();
 //   Promise.all(favorites.map(id => loadGifDetails(id)))
 //     .then(favoriteGifs => q(CONTAINER_SELECTOR).innerHTML = toFavoritesGifs(favoriteGifs))
