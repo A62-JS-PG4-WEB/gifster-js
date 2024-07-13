@@ -1,9 +1,10 @@
-import { HOME } from './common/constant.js';
+import { ABOUT, HOME } from './common/constant.js';
 import { q } from './events/helpers.js';
 import { loadPage } from './events/navigation-events.js';
 import { renderSearchItems } from './events/search-events.js';
 import { renderGifDetails } from './events/navigation-events.js';
 import { uploadFile } from './events/upload.js';
+import { renderAbout} from './events/navigation-events.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -19,6 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             loadPage(HOME)
         }
+
+        if (e.target.classList.contains('about')) {
+            e.preventDefault();
+            loadPage(ABOUT)
+        }
+        
 
         if (e.target.classList.contains('detailed-func')) {
             const img = e.target.src;
