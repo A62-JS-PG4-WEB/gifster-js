@@ -23,7 +23,7 @@ export const uploadGif = (gif) => {
     const formData = new FormData();
     formData.append('file', gif);
 
-    const url = `${API_URL}/${gif}?api_key=${API_KEY}`;
+    const url = `${API_URL}/?api_key=${API_KEY}`;
 
     try {
         fetch(url, {
