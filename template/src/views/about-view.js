@@ -7,4 +7,3 @@ export const toAboutView = () => `
   </div>
 </div>
 `;
-//test

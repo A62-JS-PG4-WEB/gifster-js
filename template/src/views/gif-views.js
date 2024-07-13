@@ -10,8 +10,8 @@
 //   }
 // };
 
-export const toGifSimple = (gif) => 
-`<div class="gif-simple">
+export const toGifSimple = (gif) =>
+  `<div class="gif-simple">
 
 <div class="gif-image-container">
   <img class="detailed-func" src="${gif.images.fixed_height.url}" alt="GIF Image">
@@ -50,4 +50,3 @@ export const toGifDetails = (gif) => `
 //   `;
 // };
 
-//test

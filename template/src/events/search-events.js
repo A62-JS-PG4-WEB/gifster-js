@@ -8,4 +8,3 @@ export const renderSearchItems = (searchTerm) => {
     .then(gifs => q(CONTAINER_SELECTOR).innerHTML = toSearchView(gifs.data, searchTerm));
 };
 
-//test

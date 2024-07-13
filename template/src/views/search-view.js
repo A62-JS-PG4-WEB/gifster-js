@@ -11,4 +11,3 @@ export const toSearchView = (gifs, searchTerm) => `
 </div>
 `;
 
-//test

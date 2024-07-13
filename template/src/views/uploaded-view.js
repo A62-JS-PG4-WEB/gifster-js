@@ -11,4 +11,3 @@ export const toUploadedView = () => `
 </div>
 `
 
-//test

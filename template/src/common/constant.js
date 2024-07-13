@@ -17,5 +17,3 @@ export const ABOUT = 'about';
 export const API_URL = `https://api.giphy.com/v1/gifs`;
 
 export const API_KEY = 'N99BMoi9pa2HYOFDWBPXUn4cxO6yZZQU';
-
-//test

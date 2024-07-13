@@ -13,7 +13,7 @@
 
 
 import { getUploads } from "../data/uploads.js";
- 
+
 export const toUploadView = () => `
 <div id="upload">
   <input type="file" id="upload-gif" accept="image/*">
@@ -24,4 +24,3 @@ export const toUploadView = () => `
 </div>
 `;
 
-//test
