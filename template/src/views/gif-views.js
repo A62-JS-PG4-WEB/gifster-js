@@ -3,7 +3,6 @@
 //${renderFavoriteStatus(gif.id)}
 export const toGifSimple = (gif) => `
 <div class="gif-simple">
-  <h1>${gif.title}</h1>
   
   <img class="detailed-func" src="${gif.images.fixed_height.url}"alt="GIF Image"><br>
 </div>
