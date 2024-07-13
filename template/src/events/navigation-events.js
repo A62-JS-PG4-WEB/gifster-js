@@ -78,5 +78,9 @@ export const renderGifDetails = (id = null) => {
   };
 
   export const renderFavorites = async() => {
-    q(CONTAINER_SELECTOR).innerHTML = toFavoritesGifs();
-  }
+    q(CONTAINER_SELECTOR).innerHTML = await toFavoritesGifs()}
+//     const favorites = getFavorites();
+//   Promise.all(favorites.map(id => loadSingleMovie(id)))
+//     .then(favoriteGifs => q(CONTAINER_SELECTOR).innerHTML = toFavoritesGifs(favoriteGifs))
+//     .catch(error => console.error(error.message));
+//   }
