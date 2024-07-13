@@ -4,8 +4,6 @@ import { fetchTrendingGifs, loadGifDetails } from "../requests/request-service.j
 import { toHomeView } from "../views/home-view.js";
 import { toGifDetails } from "../views/gif-views.js";
 import { toUploadView } from "../views/upload-view.js";
-import { toUploadedView } from "../views/uploaded-view.js";
-import { toFavoritesGifs } from "../views/favorites-view.js";
 
 
 export const loadPage = (page = '') => {
@@ -22,12 +20,8 @@ export const loadPage = (page = '') => {
 
         case UPLOAD_GIF:
             setActiveNav(UPLOAD_GIF);
-            return renderUploadGif();
+            return renderUpload();
 
-            
-        case UPLOADED_GIFS:
-            setActiveNav(UPLOADED_GIFS);
-            return renderUploaded();
 
         case ABOUT:
             setActiveNav(ABOUT);
@@ -65,22 +59,17 @@ export const renderGifDetails = (id = null) => {
     .catch(error => console.error(error.message))
   };
 
-  export const renderUploadGif = async() => {
+  export const renderUpload = () => {
     q(CONTAINER_SELECTOR).innerHTML = toUploadView();
-  };
-
-  export const renderUploaded = async() => {
-    q(CONTAINER_SELECTOR).innerHTML = toUploadedView();
-  };
+};
 
   export const renderAbout = async()=> {
     q(CONTAINER_SELECTOR).innerHTML = toAboutView();
   };
 
   export const renderFavorites = async() => {
-    q(CONTAINER_SELECTOR).innerHTML = await toFavoritesGifs()}
+    q(CONTAINER_SELECTOR).innerHTML =  toFavoritesGifs()}
 //     const favorites = getFavorites();
-//   Promise.all(favorites.map(id => loadSingleMovie(id)))
+//   Promise.all(favorites.map(id => loadGifDetails(id)))
 //     .then(favoriteGifs => q(CONTAINER_SELECTOR).innerHTML = toFavoritesGifs(favoriteGifs))
-//     .catch(error => console.error(error.message));
-//   }
+//     .catch(error => console.error(error.message));   }
