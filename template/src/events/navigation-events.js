@@ -33,12 +33,11 @@ export const loadPage = (page = '') => {
 
 };
 
-
 export const renderHome = () => {
-    const container = document.querySelector('#container');
+    const container = q(CONTAINER_SELECTOR);
     container.innerHTML = toHomeView();
 
-    const section = container.querySelector('section[aria-live="polite"]');
+    const section = q('section[aria-live="polite"]');
 
     fetchTrendingGifs()
         .then(gifs => {
@@ -46,13 +45,12 @@ export const renderHome = () => {
                 const img = document.createElement('img');
                 img.src = gif.images.fixed_height.url;
                 img.alt = gif.title;
-                img.classList.add('gif-item'); // Add class for easier selection
-                img.dataset.gifId = gif.id; // Store the GIF ID in a data attribute
+                img.classList.add('gif-item');
+                img.dataset.gifId = gif.id;
                 section.appendChild(img);
             });
 
-            // Add event listeners for the GIFs
-            const gifItems = section.querySelectorAll('.gif-item');
+            const gifItems = qs('.gif-item');
             gifItems.forEach(gif => {
                 gif.addEventListener('click', (e) => {
                     const gifId = e.target.dataset.gifId;
