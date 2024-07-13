@@ -9,7 +9,9 @@ import { uploadFile } from './events/upload.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-// test
+//resolved
+
+
     document.addEventListener('click', e => {
 
         if (e.target.classList.contains('nav-link')) {
@@ -17,6 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
             loadPage(e.target.getAttribute('data-page'));
         }
 
+        if (e.target.closest('#logo')) {
+            e.preventDefault();
+            loadPage(HOME);
+        }
 
         if (e.target.classList.contains('detailed-func')) {
             const img = e.target.src;
@@ -24,27 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             renderGifDetails(imgParts[imgParts.length - 2])
         }
-
-        // if (e.target.classList.contains('favorite')) {
-        //     toggleFavoriteStatus(+e.target.getAttribute('data-gif-id'));
-        //   }
-
-
-        // if (e.target.classList.contains('add-to-favorites') || e.target.classList.contains('remove-from-favorites')) {
-        //     const gifId = e.target.getAttribute('data-gif-id');
-        //     if (gifId) {
-        //        toggleFavoriteStatus(gifId);
-        //     } else {
-        //       console.error('GIF ID is undefined:', e.target);
-        //     }
-        //   }
-
-
-
-        if (e.target.id === 'upload-button') {
-            uploadFile();
-          }
-
 
     });
 
