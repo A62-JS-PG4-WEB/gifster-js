@@ -9,12 +9,7 @@ import { uploadFile } from './events/upload.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // document.addEventListener('keydown', (e) => {
-    //     if (e.target.classList.contains('search-bar') && e.key === 'Enter') {
-    //         renderSearchItems(e.target.value)
-    //     }
-    // })
-
+// test
     document.addEventListener('click', e => {
 
         if (e.target.classList.contains('nav-link')) {
