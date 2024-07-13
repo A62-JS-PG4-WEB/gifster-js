@@ -1,8 +1,12 @@
-import { HOME } from "../common/constant.js";
-import { setActiveNav } from "./helpers.js"
-import { fetchTrendingGifs } from "../requests/request-service.js";
+import { HOME, FAVORITE, UPLOAD_GIF, ABOUT, CONTAINER_SELECTOR, UPLOADED_GIFS} from "../common/constant.js";
+import { q, setActiveNav } from "./helpers.js"
+import { fetchTrendingGifs, loadGifDetails } from "../requests/request-service.js";
 import { toHomeView } from "../views/home-view.js";
-import { toGifDetails, toGifDetails } from "../views/gif-views.js";
+import { toGifDetails } from "../views/gif-views.js";
+import { toUploadView } from "../views/upload-view.js";
+import { toUploadedView } from "../views/uploaded-view.js";
+import { toFavoritesGifs } from "../views/favorites-view.js";
+
 
 export const loadPage = (page = '') => {
 
@@ -12,14 +16,15 @@ export const loadPage = (page = '') => {
             setActiveNav(HOME);
             return renderHome();
 
-        case FAVORITES:
-            setActiveNav(FAVORITES);
+        case FAVORITE:
+            setActiveNav(FAVORITE);
             return renderFavorites();
 
         case UPLOAD_GIF:
             setActiveNav(UPLOAD_GIF);
-            return renderUpload();
+            return renderUploadGif();
 
+            
         case UPLOADED_GIFS:
             setActiveNav(UPLOADED_GIFS);
             return renderUploaded();
@@ -60,12 +65,22 @@ export const renderGifDetails = (id = null) => {
     .catch(error => console.error(error.message))
   };
 
-  export const renderUploadGif = (id = null) => {
-    loadGifDetails(id)
-    .then(gif => q(CONTAINER_SELECTOR).innerHTML = toGifDetails(gif.data))
-    .catch(error => console.error(error.message))
+  export const renderUploadGif = async() => {
+    q(CONTAINER_SELECTOR).innerHTML = toUploadView();
   };
 
-  const renderAbout = () => {
+  export const renderUploaded = async() => {
+    q(CONTAINER_SELECTOR).innerHTML = toUploadedView();
+  };
+
+  export const renderAbout = async()=> {
     q(CONTAINER_SELECTOR).innerHTML = toAboutView();
   };
+
+  export const renderFavorites = async() => {
+    q(CONTAINER_SELECTOR).innerHTML = await toFavoritesGifs()}
+//     const favorites = getFavorites();
+//   Promise.all(favorites.map(id => loadSingleMovie(id)))
+//     .then(favoriteGifs => q(CONTAINER_SELECTOR).innerHTML = toFavoritesGifs(favoriteGifs))
+//     .catch(error => console.error(error.message));
+//   }
