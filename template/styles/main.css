@@ -43,7 +43,103 @@ body {
     margin-left: 100px;
 }
 
+/* Gif details styles */
 
+div.gif-detailed-info {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    backdrop-filter: blur(2px);
+}
+
+div.gif-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    padding: 20px;
+    margin: 10px;
+    border-right: 1px solid rgb(112, 112, 112);
+}
+
+div.poster {
+    width: 70%;  /* Increase width to give more space to the image */
+    padding: 10px;
+    margin: 10px;
+    text-align: left; 
+}
+
+div.poster h1 {
+    margin-top: 10px;
+    font-size: 1em;
+    margin-bottom: 40px; /* Space between title and image */
+}
+
+div.poster img {
+    max-width: 90%;
+    height: auto;
+}
+
+/* Upload Gif style */
+
+#upload {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#upload h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+#container {
+    margin: 20px 0;
+}
+
+#upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#gif-upload {
+    margin-bottom: 10px;
+}
+
+#upload-form input[type="file"] {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 1em;
+}
+
+#upload-form button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#upload-form button:hover {
+    background-color: #0056b3;
+}
+
+#upload-status {
+    margin-top: 20px;
+    font-size: 1em;
+    color: #333;
+}
 
 
 /* footer */
