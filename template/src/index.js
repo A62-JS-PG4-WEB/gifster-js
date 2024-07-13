@@ -5,6 +5,7 @@ import { renderSearchItems } from './events/search-events.js';
 import { renderGifDetails } from './events/navigation-events.js';
 import { uploadGif } from './requests/request-service.js';
 import { toGifDetails } from './views/gif-views.js';
+import { uploadFile } from './events/upload.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
