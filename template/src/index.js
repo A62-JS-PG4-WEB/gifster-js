@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
             loadPage(ABOUT)
         }
 
-
         if (e.target.classList.contains('detailed-func')) {
             const img = e.target.src;
             const imgParts = img.split('/');
