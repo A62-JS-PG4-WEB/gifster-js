@@ -1,11 +1,10 @@
-let uploads = JSON.parse(localStorage.getItem('upload')) || [];
-
+let uploads = JSON.parse(localStorage.getItem('uploads')) || [];
+ 
 export const addUpload = (gifId) => {
   if (!uploads.includes(gifId)) {
     uploads.push(gifId);
-    localStorage.setItem('upload', JSON.stringify(uploads));
+    localStorage.setItem('uploads', JSON.stringify(uploads));
   }
 };
-
+ 
 export const getUploads = () => [...uploads];
-

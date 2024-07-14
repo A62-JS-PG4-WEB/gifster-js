@@ -13,34 +13,7 @@ export const loadGifDetails = (gifId) => {
     }
 };
 
-// export const uploadGif = (gif) => {
-//     // check file is up to 100MB -> in class
-//     if (gif.size > 100 * 1024 * 1024) {
-//         console.error('File size exceeds 100MB');
-//         return;
-//     }
 
-//     const formData = new FormData();
-//     formData.append('file', gif);
-
-//     const url = `${API_URL}/?api_key=${API_KEY}`;
-
-//     try {
-//         fetch(url, {
-//             method: 'POST',
-//             body: formData
-//         })
-//             .then(response => response.json())
-//             .then(data => {
-//                 console.log('Success:', data);
-//             })
-//             .catch((error) => {
-//                 console.error('Error:', error);
-//             });
-//     } catch (error) {
-//         console.error('Error:', error);
-//     }
-// }
 export const uploadGif = async (formData) => {
 
     return await fetch('https://upload.giphy.com/v1/gifs', {
@@ -59,7 +32,6 @@ export const loadSearchGifs = (searchTerm = '') => {
     try {
         return fetch(`${API_URL}/search?api_key=${API_KEY}&q=${searchTerm}`)
             .then(response => response.json());
-
     } catch (err) {
         console.error('Error:', err);
     }

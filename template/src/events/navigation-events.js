@@ -1,4 +1,4 @@
-import { HOME, FAVORITE, UPLOAD_GIF, ABOUT, CONTAINER_SELECTOR, UPLOADED_GIFS } from "../common/constant.js";
+import { HOME, FAVORITE, UPLOAD_GIF, ABOUT, CONTAINER_SELECTOR } from "../common/constant.js";
 import { q, qs, setActiveNav } from "./helpers.js"
 import { fetchTrendingGifs, loadGifDetails } from "../requests/request-service.js";
 import { toHomeView } from "../views/home-view.js";
@@ -28,7 +28,6 @@ export const loadPage = (page = '') => {
             setActiveNav(ABOUT);
             return renderAbout();
 
-        /* if the app supports error login, use default to log mapping errors */
         default: return null;
     }
 

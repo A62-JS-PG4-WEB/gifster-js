@@ -1,44 +1,30 @@
 import { uploadGif } from '../requests/request-service.js';
 import { API_KEY } from '../common/constant.js';
 import { q } from './helpers.js';
-import { addUpload, getUploads } from '../data/uploads.js';
+import { addUpload } from '../data/uploads.js';
 
 export const uploadFile = async () => {
   const fileInput = q('#upload-gif');
+  const file = fileInput.files[0];
+
+
   const formData = new FormData();
-
-  formData.append('file', fileInput.files[0]);
+  formData.append('file', file);
   formData.append('api_key', API_KEY);
+  formData.append('tags', 'group4')
 
-  uploadGif(formData)
-    .then(data => {
-      if (data.meta.status === 200) {
-        alert('GIF uploaded successfully!');
-        const uploadedGifId = data.data.id;
-        addUpload(uploadedGifId); // Save upload to localStorage
-        displayUploadedGifs(); // Display all uploaded GIFs
-      } else {
-        alert('Failed to upload GIF. Status: ' + data.meta.status);
-      }
-    })
-    .catch(error => {
-      console.error('Error uploading GIF:', error.message);
-      alert('Error uploading GIF:', error.message);
-    });
+  try {
+    const data = await uploadGif(formData);
+    if (data.meta.status === 200) {
+      alert('GIF uploaded successfully!');
+      const uploadedGifId = data.data.id;
+      addUpload(uploadedGifId);
+
+    } else {
+      alert('Failed to upload GIF. Status: ' + data.meta.status);
+    }
+  } catch (error) {
+    console.error('Error uploading GIF:', error.message);
+    alert('Error uploading GIF: ' + error.message);
+  }
 };
-
-const displayUploadedGifs = () => {
-  const uploadedDiv = q('#uploaded');
-  uploadedDiv.innerHTML = ''; // Clear existing content
-
-  const uploads = getUploads();
-  uploads.forEach(gifId => {
-    const imgElement = document.createElement('img');
-    imgElement.src = `https://media.giphy.com/media/${gifId}/giphy.gif`; // Replace with actual URL if needed
-    imgElement.alt = `Uploaded GIF ${gifId}`;
-    imgElement.className = 'grid-item';
-
-    uploadedDiv.appendChild(imgElement);
-  });
-};
-

@@ -4,7 +4,6 @@ import { loadPage } from './events/navigation-events.js';
 import { renderSearchItems } from './events/search-events.js';
 import { renderGifDetails } from './events/navigation-events.js';
 import { uploadFile } from './events/upload.js';
-import { renderAbout} from './events/navigation-events.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -25,13 +24,19 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             loadPage(ABOUT)
         }
-        
+
 
         if (e.target.classList.contains('detailed-func')) {
             const img = e.target.src;
             const imgParts = img.split('/');
             e.preventDefault();
             renderGifDetails(imgParts[imgParts.length - 2])
+        }
+
+        if (e.target.classList.contains('gif-image')) {
+            const gifId = e.target.getAttribute('data-gif-id');
+            e.preventDefault();
+            renderGifDetails(gifId);
         }
 
         // if (e.target.classList.contains('favorite')) {
@@ -51,9 +56,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         if (e.target.id === 'upload-button') {
-            uploadFile();
+            const fileInput = document.querySelector('#upload-gif');
+            fileInput.classList.toggle('hidden-input');
+            fileInput.click(); // Simulate a click on the file input
+            fileInput.classList.toggle('hidden-input'); // Toggle back after click
         }
 
+    });
+
+    document.addEventListener('change', e => {
+
+        if (e.target.id === 'upload-gif') {
+            const fileInput = document.querySelector('#upload-gif');
+            const selectedFile = fileInput.files[0];
+            if (selectedFile) {
+                console.log('Selected file:', selectedFile);
+                uploadFile(selectedFile);
+            }
+        }
 
     });
 
