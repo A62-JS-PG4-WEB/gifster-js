@@ -2,7 +2,7 @@
 
 // export const addFavorite = (gifId) => {
 //   if (favorites.find(id => id === gifId)) {
-//     // Movie has already been added to favorites
+//     // Gif has already been added to favorites
 //     return;
 //   }
 
@@ -15,4 +15,7 @@
 //   localStorage.setItem('favorite', JSON.stringify(favorites));
 // };
 
+
 // export const getFavorites = () => [...favorites];
+
+

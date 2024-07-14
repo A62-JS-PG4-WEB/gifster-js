@@ -11,7 +11,6 @@ body {
     text-decoration: none;
 }
 
-
 .main-id {
     display: flex;
     justify-content: center;
@@ -21,27 +20,64 @@ body {
     color: inherit;
 }
 
-.navbar {
+.search-container {
     display: flex;
     justify-content: center;
-    font-size: larger;
+    margin-bottom: 20px;
 }
 
-.nav-link {
-    padding: 20px;
+.search-wrapper {
+    position: relative;
+    width: 400px;
 }
 
 .search-bar {
-    height: 25px;
-    width: 350px;
-    border-radius: 10px;
-    border-width: 1px;
+    width: 100%;
+    padding: 10px 10px 10px 40px; /* Adjust padding for the left space for icon */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #000;
+}
+
+/* CSS for styling the navbar links */
+.navbar {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.navbar nav {
+    display: inline-block;
+}
+
+.nav-link {
+    color: blue;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
 
 .trending {
     justify-content: left;
     margin-left: 100px;
 }
+/* Search results styles*/
+
 
 /* Gif details styles */
 
@@ -82,66 +118,70 @@ div.poster img {
 
 /* Upload Gif style */
 
-#upload {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.hidden-input {
+    display: none;
+  }
+  
+  /* Style for the upload container */
+  #upload {
     text-align: center;
-}
-
-#upload h1 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-#container {
-    margin: 20px 0;
-}
-
-#upload-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#gif-upload {
-    margin-bottom: 10px;
-}
-
-#upload-form input[type="file"] {
-    display: block;
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 1em;
-}
-
-#upload-form button {
+    margin: 20px;
+  }
+  
+  /* Style for the upload button */
+  #upload-button {
+    margin-top: 10px;
     padding: 10px 20px;
-    font-size: 1em;
-    color: #fff;
-    background-color: #007bff;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
     border: none;
     border-radius: 5px;
+  }
+  
+  #upload-button:hover {
+    background-color: #218838;
+  }
+  
+  /* Container for uploaded GIFs */
+  #uploaded {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  /* Style for each grid item */
+  .grid-item {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .grid-item:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Style for each GIF image */
+  .gif-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#upload-form button:hover {
-    background-color: #0056b3;
-}
-
-#upload-status {
-    margin-top: 20px;
-    font-size: 1em;
-    color: #333;
-}
-
-
+  }
+  
+  /* Style for the "No uploaded gifs" message */
+  #uploaded p {
+    font-size: 18px;
+    color: #777;
+    text-align: center;
+  }
 /* footer */
 footer {
     display: grid;
@@ -170,6 +210,6 @@ footer {
     transition: transform 0.3s ease; }
   
   .gif-image-container img:hover {
-    transform: scale(1.2); 
+    transform: scale(1.1); 
   }
 

@@ -1,5 +1,4 @@
 
-
 export const q = (selector) => document.querySelector(selector);
 
 export const qs = (selector) => document.querySelectorAll(selector);

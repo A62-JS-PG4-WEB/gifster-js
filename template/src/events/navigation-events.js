@@ -1,12 +1,11 @@
-import { HOME, FAVORITE, UPLOAD_GIF, ABOUT, CONTAINER_SELECTOR, UPLOADED_GIFS} from "../common/constant.js";
-import { q, setActiveNav } from "./helpers.js"
+import { HOME, FAVORITE, UPLOAD_GIF, ABOUT, CONTAINER_SELECTOR } from "../common/constant.js";
+import { q, qs, setActiveNav } from "./helpers.js"
 import { fetchTrendingGifs, loadGifDetails } from "../requests/request-service.js";
 import { toHomeView } from "../views/home-view.js";
 import { toGifDetails } from "../views/gif-views.js";
 import { toUploadView } from "../views/upload-view.js";
-import { toUploadedView } from "../views/uploaded-view.js";
 import { toFavoritesGifs } from "../views/favorites-view.js";
-
+import { toAboutView } from "../views/about-view.js"
 
 export const loadPage = (page = '') => {
 
@@ -22,65 +21,72 @@ export const loadPage = (page = '') => {
 
         case UPLOAD_GIF:
             setActiveNav(UPLOAD_GIF);
-            return renderUploadGif();
+            return renderUpload();
 
-            
-        case UPLOADED_GIFS:
-            setActiveNav(UPLOADED_GIFS);
-            return renderUploaded();
 
         case ABOUT:
             setActiveNav(ABOUT);
             return renderAbout();
 
-        /* if the app supports error login, use default to log mapping errors */
         default: return null;
     }
 
 };
 
 
-export const renderHome = async () => {
-    const container = document.querySelector('#container');
+export const renderHome = () => {
+    const container = q('#container');
     container.innerHTML = toHomeView();
 
-    const section = container.querySelector('section[aria-live="polite"]');
+    const section = q('section[aria-live="polite"]');
 
-    try {
-        const gifs = await fetchTrendingGifs();
-        gifs.forEach(gif => {
-            const img = document.createElement('img');
-            img.src = gif.images.fixed_height.url;
-            img.alt = gif.title;
-            section.appendChild(img);
+    fetchTrendingGifs()
+        .then(gifs => {
+            gifs.forEach(gif => {
+                const img = document.createElement('img');
+                img.src = gif.images.fixed_height.url;
+                img.alt = gif.title;
+                img.classList.add('gif-item');
+                img.dataset.gifId = gif.id;
+                section.appendChild(img);
+            });
+
+
+            const gifItems = qs('.gif-item');
+            gifItems.forEach(gif => {
+                gif.addEventListener('click', (e) => {
+                    const gifId = e.target.dataset.gifId;
+                    renderGifDetails(gifId);
+                });
+            });
+        })
+        .catch(error => {
+            console.error('Error displaying trending GIFs', error);
         });
-    } catch (error) {
-        console.error('Error displaying trending GIFs', error);
-    }
 };
 
 export const renderGifDetails = (id = null) => {
     loadGifDetails(id)
-    .then(gif => q(CONTAINER_SELECTOR).innerHTML = toGifDetails(gif.data))
-    .catch(error => console.error(error.message))
-  };
+        .then(gif => q(CONTAINER_SELECTOR).innerHTML = toGifDetails(gif.data))
+        .catch(error => console.error(error.message))
+};
 
-  export const renderUploadGif = async() => {
+export const renderUpload = () => {
     q(CONTAINER_SELECTOR).innerHTML = toUploadView();
-  };
+};
 
-  export const renderUploaded = async() => {
-    q(CONTAINER_SELECTOR).innerHTML = toUploadedView();
-  };
-
-  export const renderAbout = async()=> {
+export const renderAbout = async () => {
     q(CONTAINER_SELECTOR).innerHTML = toAboutView();
-  };
+};
 
-  export const renderFavorites = async() => {
-    q(CONTAINER_SELECTOR).innerHTML = await toFavoritesGifs()}
+export const renderFavorites = async () => {
+    q(CONTAINER_SELECTOR).innerHTML = await toFavoritesGifs()
+}
+
+
+
 //     const favorites = getFavorites();
-//   Promise.all(favorites.map(id => loadSingleMovie(id)))
+//   Promise.all(favorites.map(id => loadGifDetails(id)))
 //     .then(favoriteGifs => q(CONTAINER_SELECTOR).innerHTML = toFavoritesGifs(favoriteGifs))
-//     .catch(error => console.error(error.message));
-//   }
+//     .catch(error => console.error(error.message));   }
+
