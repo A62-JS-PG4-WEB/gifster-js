@@ -12,4 +12,3 @@
 //   q(`span[data-gif-id="${gifId}"]`).innerHTML = renderFavoriteStatus(gifId);
 // };
 
-//test

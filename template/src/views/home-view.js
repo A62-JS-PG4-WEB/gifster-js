@@ -6,4 +6,3 @@ export const toHomeView = () => `
     </section>
 `;
 
-//test
