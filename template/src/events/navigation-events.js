@@ -1,6 +1,6 @@
 import { HOME, FAVORITE, UPLOAD_GIF, ABOUT, CONTAINER_SELECTOR } from "../common/constant.js";
 import { q, qs, setActiveNav } from "./helpers.js"
-import { fetchTrendingGifs, loadGifDetails } from "../requests/request-service.js";
+import { fetchTrendingGifs, fetchUploadedGifs, loadGifDetails } from "../requests/request-service.js";
 import { toHomeView } from "../views/home-view.js";
 import { toGifDetails } from "../views/gif-views.js";
 import { toUploadView } from "../views/upload-view.js";
@@ -48,6 +48,9 @@ export const renderHome = () => {
                 img.alt = gif.title;
                 img.classList.add('gif-item');
                 img.dataset.gifId = gif.id;
+                img.style.borderRadius = '30px'
+                img.style.justifyContent = 'center'
+                img.style.padding = '15px'
                 section.appendChild(img);
             });
 
@@ -74,6 +77,14 @@ export const renderGifDetails = (id = null) => {
 export const renderUpload = () => {
     q(CONTAINER_SELECTOR).innerHTML = toUploadView();
 };
+
+// export const renderUpload = () => {
+//     fetchUploadedGifs()
+//    .then(gif => 
+//    {console.log(gif.data); 
+//     q(CONTAINER_SELECTOR).innerHTML = toUploadView(gif.data)}
+//    )
+// };
 
 export const renderAbout = async () => {
     q(CONTAINER_SELECTOR).innerHTML = toAboutView();

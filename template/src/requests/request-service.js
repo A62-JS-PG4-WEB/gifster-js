@@ -11,8 +11,7 @@ export const loadGifDetails = (gifId) => {
     catch (error) {
         console.error('Error:', error);
     }
-};
-
+}
 
 export const uploadGif = async (formData) => {
 
@@ -37,7 +36,6 @@ export const loadSearchGifs = (searchTerm = '') => {
     }
 }
 
-
 export const fetchTrendingGifs = () => {
     try {
         return fetch(`${API_URL}/trending?api_key=${API_KEY}`)
@@ -47,3 +45,17 @@ export const fetchTrendingGifs = () => {
         console.error('Error:', err);
     }
 };
+export const fetchUploadedGifs = () => {
+
+    try {
+        
+        const tag = 'group4';
+        const username = 'fantastic4group';
+        const query = `@${username}`;
+        return fetch(`${API_URL}/search?api_key=${API_KEY}&q=${tag}`)
+        .then(response => response.json());
+    }
+    catch (err) {
+        console.error('Error:', err);
+    }
+}
