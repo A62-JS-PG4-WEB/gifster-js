@@ -48,6 +48,7 @@ export const renderHome = () => {
                 img.alt = gif.title;
                 img.classList.add('gif-item');
                 img.dataset.gifId = gif.id;
+                img.style.borderRadius = '30px'
                 img.style.justifyContent = 'center'
                 img.style.padding = '15px'
                 section.appendChild(img);
