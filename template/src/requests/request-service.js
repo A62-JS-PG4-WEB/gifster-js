@@ -4,6 +4,7 @@ export const loadGifDetails = (gifId) => {
 
     try {
         const url = `${API_URL}/${gifId}?api_key=${API_KEY}`;
+        //await or catch after then
         const loadGifDetails = fetch(url)
             .then(response => response.json());
         return loadGifDetails;
@@ -12,6 +13,12 @@ export const loadGifDetails = (gifId) => {
         console.error('Error:', error);
     }
 }
+
+// export const loadSingleGif = async (gifId) => {
+
+//     return await fetch(`${API_URL}/${gifId}?api_key=${API_KEY}`)
+//       .then(response => response.json()); 
+//   };
 
 export const uploadGif = async (formData) => {
 
@@ -27,7 +34,7 @@ export const uploadGif = async (formData) => {
 };
 
 export const loadSearchGifs = (searchTerm = '') => {
-
+//await
     try {
         return fetch(`${API_URL}/search?api_key=${API_KEY}&q=${searchTerm}`)
             .then(response => response.json());
@@ -45,6 +52,7 @@ export const fetchTrendingGifs = () => {
         console.error('Error:', err);
     }
 };
+
 export const fetchUploadedGifs = () => {
 
     try {

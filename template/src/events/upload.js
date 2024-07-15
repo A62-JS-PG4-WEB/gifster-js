@@ -11,7 +11,7 @@ export const uploadFile = async () => {
   const formData = new FormData();
   formData.append('file', file);
   formData.append('api_key', API_KEY);
- // formData.append('tags', 'fantastic4Group')
+  formData.append('tags', 'fantastic4Group, Group4TeamProject')
 
   try {
     const data = await uploadGif(formData);

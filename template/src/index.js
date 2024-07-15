@@ -1,9 +1,10 @@
-import { ABOUT, HOME } from './common/constant.js';
+import { ABOUT, FAVORITES, HOME } from './common/constant.js';
 import { q } from './events/helpers.js';
 import { loadPage } from './events/navigation-events.js';
 import { renderSearchItems } from './events/search-events.js';
 import { renderGifDetails } from './events/navigation-events.js';
 import { uploadFile } from './events/upload.js';
+import { toggleFavoriteStatus } from './events/favorites-events.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -25,6 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
             loadPage(ABOUT)
         }
 
+         if (e.target.classList.contains('favorite')) {
+            console.log('Favorite element clicked:', e.target);
+            //console.log(e.target.getAttribute('data-gif-id'));
+             toggleFavoriteStatus(e.target.getAttribute('data-gif-id'));
+         }
+
         if (e.target.classList.contains('detailed-func')) {
             const img = e.target.src;
             const imgParts = img.split('/');
@@ -38,27 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
             renderGifDetails(gifId);
         }
 
-        // if (e.target.classList.contains('favorite')) {
-        //     toggleFavoriteStatus(+e.target.getAttribute('data-gif-id'));
-        //   }
-
-
-        // if (e.target.classList.contains('add-to-favorites') || e.target.classList.contains('remove-from-favorites')) {
-        //     const gifId = e.target.getAttribute('data-gif-id');
-        //     if (gifId) {
-        //        toggleFavoriteStatus(gifId);
-        //     } else {
-        //       console.error('GIF ID is undefined:', e.target);
-        //     }
-        //   }
-
-
-
         if (e.target.id === 'upload-button') {
             const fileInput = document.querySelector('#upload-gif');
             fileInput.classList.toggle('hidden-input');
-            fileInput.click(); // Simulate a click on the file input
-            fileInput.classList.toggle('hidden-input'); // Toggle back after click
+            fileInput.click(); 
+            fileInput.classList.toggle('hidden-input'); 
         }
 
     });
@@ -73,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 uploadFile(selectedFile);
             }
         }
-
     });
 
     q('input#search').addEventListener('input', e => {
@@ -83,5 +73,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadPage(HOME);
 });
-
 

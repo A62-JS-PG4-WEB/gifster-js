@@ -7,7 +7,7 @@ export const toFavoritesGifs = (gifs) => `
   <h1>Favorite gifs</h1>
   <hr>
   <div class="content">
-   <p>Add some gifs to favorites to see them here.</p>
+   <p>${gifs.length > 0 ? gifs.map(toGifSimple).join('\n') : 'Add some gifs to favorites to see them here.'}</p>
   </div>
 </div>
 `;
