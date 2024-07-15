@@ -1,9 +1,10 @@
-import { ABOUT, HOME } from './common/constant.js';
+import { ABOUT, FAVORITES, HOME } from './common/constant.js';
 import { q } from './events/helpers.js';
 import { loadPage } from './events/navigation-events.js';
 import { renderSearchItems } from './events/search-events.js';
 import { renderGifDetails } from './events/navigation-events.js';
 import { uploadFile } from './events/upload.js';
+import { toggleFavoriteStatus } from './events/favorites-events.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Handle click events
@@ -26,7 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
             loadPage(ABOUT);
         }
 
+         if (e.target.classList.contains('favorite')) {
+            console.log('Favorite element clicked:', e.target);
+            //console.log(e.target.getAttribute('data-gif-id'));
+             toggleFavoriteStatus(e.target.getAttribute('data-gif-id'));
+         }
+
+
         // Detailed GIF view clicked
+
         if (e.target.classList.contains('detailed-func')) {
             const img = e.target.src;
             const imgParts = img.split('/');
@@ -41,12 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
             renderGifDetails(gifId);
         }
 
+
         // Upload button clicked
+
         if (e.target.id === 'upload-button') {
             const fileInput = document.querySelector('#upload-gif');
             fileInput.classList.toggle('hidden-input');
-            fileInput.click(); // Simulate a click on the file input
-            fileInput.classList.toggle('hidden-input'); // Toggle back after click
+            fileInput.click(); 
+            fileInput.classList.toggle('hidden-input'); 
         }
 
         // Theme button clicked
@@ -72,7 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle search input
     q('input#search').addEventListener('input', e => {
         e.preventDefault();
-        renderSearchItems(e.target.value);
+        renderSearchItems(e.target.value, e.target);
+        
     });
 
     // Handle theme picker input
@@ -83,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+
     // Apply selected theme
     const applyTheme = (color) => {
         document.body.style.backgroundColor = color;
@@ -91,3 +104,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load the home page initially
     loadPage(HOME);
 });
+

@@ -1,6 +1,5 @@
 
-//import renderFavoriteStatus when implemented
-//${renderFavoriteStatus(gif.id)}
+import { renderFavoriteStatus } from "../events/helpers.js";
 
 const getDomainFromUrl = (url) => {
   try {
@@ -15,7 +14,7 @@ export const toGifSimple = (gif) =>
 
 <div class="gif-image-container">
   <img class="detailed-func" src="${gif.images.fixed_height.url}" alt="GIF Image">
-</div>
+  </div>
 </div>
 `;
 
@@ -25,13 +24,14 @@ export const toGifDetails = (gif) => {
   return `
     <div class="gif-detailed-info">
       <div class="gif-info">
+       ${renderFavoriteStatus(gif.id)}
         <p>${gif.title}</p>
         <p>user: ${gif.username}</p>
         <p>Source: ${domain ? `<a href="${gif.source}" target="_blank">${domain}</a>` : 'Source not provided.'}</p>
       </div>    
       <div class="poster">
         <img src="${gif.images.fixed_height.url}" alt="GIF Image">
-      </div>
+        </div>
     </div>
   `;
 };

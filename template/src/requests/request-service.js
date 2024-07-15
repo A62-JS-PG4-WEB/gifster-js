@@ -1,5 +1,6 @@
 import { API_KEY, API_URL } from "../common/constant.js";
 
+
 export const loadGifDetails = async (gifId) => {
     const url = `${API_URL}/${gifId}?api_key=${API_KEY}`;
     const response = await fetch(url);
@@ -16,10 +17,12 @@ export const uploadGif = async (formData) => {
     return uploadResponse;
 };
 
+
 export const loadSearchGifs = async (searchTerm = '') => {
     const response = await fetch(`${API_URL}/search?api_key=${API_KEY}&q=${searchTerm}`);
     const searchResults = await response.json();
     return searchResults;
+
 }
 
 export const fetchTrendingGifs = async () => {
@@ -28,11 +31,13 @@ export const fetchTrendingGifs = async () => {
     return trendingGifs.data;
 };
 
-export const fetchUploadedGifs = async () => {
-    const tag = 'group4';
-    const username = 'fantastic4group';
-    const query = `@${username}`;
-    const response = await fetch(`${API_URL}/search?api_key=${API_KEY}&q=${tag}`);
-    const uploadedGifs = await response.json();
-    return uploadedGifs;
-}
+
+export const fetchRandomGif = async () => {
+
+    const result = await fetch(`${API_URL}/random?api_key=${API_KEY}`)
+    const favorite = await result.json()
+    console.log('fetch random favorite:' ,favorite);
+    return favorite.data;
+      
+  };
+

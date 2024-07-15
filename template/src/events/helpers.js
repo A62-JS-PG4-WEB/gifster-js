@@ -1,3 +1,5 @@
+import { FULL_HEART, EMPTY_HEART } from "../common/constant.js";
+import { getFavorites } from "../data/favorites-gifs.js";
 
 export const q = (selector) => document.querySelector(selector);
 
@@ -15,11 +17,11 @@ export const setActiveNav = (page) => {
       );
 };
 
-// export const renderFavoriteStatus = (gifId) => {
-//     const favorites = getFavorites();
+export const renderFavoriteStatus = (gifId) => {
+    const favorites = getFavorites();
   
-//     return favorites.includes(gifId)
-//       ? `<span class="favorite active" data-gif-id="${gifId}">${FULL_HEART}</span>`
-//       : `<span class="favorite" data-gif-id="${gifId}">${EMPTY_HEART}</span>`;
-//   };
+    return favorites.includes(gifId)
+      ? `<span class="favorite active" data-gif-id="${gifId}">${FULL_HEART}</span>`
+      : `<span class="favorite" data-gif-id="${gifId}">${EMPTY_HEART}</span>`;
+  };
   

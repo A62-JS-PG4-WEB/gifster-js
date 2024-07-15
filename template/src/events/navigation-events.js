@@ -1,11 +1,13 @@
-import { HOME, FAVORITE, UPLOAD_GIF, ABOUT, CONTAINER_SELECTOR } from "../common/constant.js";
+import { HOME, FAVORITES, UPLOAD_GIF, ABOUT, CONTAINER_SELECTOR } from "../common/constant.js";
 import { q, qs, setActiveNav } from "./helpers.js"
-import { fetchTrendingGifs, fetchUploadedGifs, loadGifDetails } from "../requests/request-service.js";
+import { fetchRandomGif, fetchTrendingGifs, loadGifDetails } from "../requests/request-service.js";
 import { toHomeView } from "../views/home-view.js";
 import { toGifDetails } from "../views/gif-views.js";
 import { toUploadView } from "../views/upload-view.js";
 import { toFavoritesGifs } from "../views/favorites-view.js";
 import { toAboutView } from "../views/about-view.js"
+import { getFavorites } from "../data/favorites-gifs.js";
+import { toRandomGif } from "../views/favorites-view.js";
 
 export const loadPage = (page = '') => {
 
@@ -15,14 +17,13 @@ export const loadPage = (page = '') => {
             setActiveNav(HOME);
             return renderHome();
 
-        case FAVORITE:
-            setActiveNav(FAVORITE);
+        case FAVORITES:
+            setActiveNav(FAVORITES);
             return renderFavorites();
 
         case UPLOAD_GIF:
             setActiveNav(UPLOAD_GIF);
             return renderUpload();
-
 
         case ABOUT:
             setActiveNav(ABOUT);
@@ -91,13 +92,26 @@ export const renderAbout = async () => {
 };
 
 export const renderFavorites = async () => {
-    q(CONTAINER_SELECTOR).innerHTML = await toFavoritesGifs()
+    const favorites = getFavorites();
+    if (favorites.length === 0) {
+        console.log('fav length:', favorites.length);
+        return await randomFavGif()
+    }
+    console.log('renderFavorites function called. Current favorites:', favorites);
+
+    Promise.all(favorites.map(id => loadGifDetails(id)))
+        .then(returnedResults => {
+            const favoriteGifs = returnedResults.map(result => result.data)
+            console.log('Fetched favorite GIFs:', favoriteGifs);
+            q(CONTAINER_SELECTOR).innerHTML = toFavoritesGifs(favoriteGifs);
+        })
+        .catch(error => console.error(error.message));
 }
 
-
-
-//     const favorites = getFavorites();
-//   Promise.all(favorites.map(id => loadGifDetails(id)))
-//     .then(favoriteGifs => q(CONTAINER_SELECTOR).innerHTML = toFavoritesGifs(favoriteGifs))
-//     .catch(error => console.error(error.message));   }
-
+export const randomFavGif = async () => {
+    alert('You have no favorites yet. Showing a random GIF instead.');
+    const favorite = await fetchRandomGif();
+    console.log('random:', favorite.images.fixed_height.url);
+    q(CONTAINER_SELECTOR).innerHTML =  toRandomGif(favorite);
+       
+}
