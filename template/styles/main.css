@@ -284,3 +284,68 @@ border-radius: 100px;
 .about-h1 {
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+/*logo GIFster*/ 
+
+.header {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  padding: 20px;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for a 3D effect */
+}
+
+.gif-container {
+  position: relative;
+  max-width: 30%; /* Adjust as needed */
+  border-radius: 15px; /* Rounded corners */
+  overflow: hidden; /* Ensure the image doesn't overflow its container */
+}
+
+.gif-container img {
+  width: 100%; /* Ensure the image takes full width of its container */
+  display: block; /* Remove any extra space around the image */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for a 3D effect */
+}
+
+.title {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 1.5em; /* Adjust font size as needed */
+  color: #fff; /* Text color white */
+  -webkit-text-stroke: 1px black; /* Outline the text in black */
+  text-shadow: 
+      1px 1px 2px rgba(0, 0, 0, 0.1), 
+      2px 2px 4px rgba(0, 0, 0, 0.2), 
+      3px 3px 6px rgba(0, 0, 0, 0.3), 
+      4px 4px 8px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  font-style: italic; /* Italics */
+  font-weight: bold; /* Bold */
+  margin: 0;
+  padding: 10px; /* Padding around the text */
+  z-index: 1; /* Ensure text is above the image */
+}
+/* theme-button*/
+
+.theme-button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  padding: 10px 20px;
+  color: #fff; /* Change to white to see the outline */
+  background-color: #333; /* Dark background for contrast */
+  border: 2px solid black; /* Outline the button in black */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 10px; /* Add some margin for spacing */
+  border-radius: 5px; /* Slightly rounded corners */
+}
+
+.theme-button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
