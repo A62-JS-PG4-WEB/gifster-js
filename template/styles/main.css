@@ -231,3 +231,49 @@ footer {
   color: grey;
   opacity: 0.5;
 }
+
+/* theme-button */
+.theme-button {
+  display: inline-block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f4efef;
+  color: black;
+  border: transparent;
+  border-radius: 20px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.theme-button:hover {
+  background-color: #e1e1e1;
+}
+
+.theme-picker {
+  display: none;
+}
+
+#about {
+display: grid;
+place-items: center;
+}
+
+.about-content {
+padding: 20px;
+border: 4px double #567df4;
+border-radius: 20px;
+background-color: #f0f0f0;
+color: #333;
+}
+
+.about-image {
+align-items: left;
+max-width: 50vh;
+border-radius: 100px;
+}
+
+.about-h1 {
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
