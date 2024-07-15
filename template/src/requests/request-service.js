@@ -1,61 +1,38 @@
 import { API_KEY, API_URL } from "../common/constant.js";
 
-export const loadGifDetails = (gifId) => {
-
-    try {
-        const url = `${API_URL}/${gifId}?api_key=${API_KEY}`;
-        const loadGifDetails = fetch(url)
-            .then(response => response.json());
-        return loadGifDetails;
-    }
-    catch (error) {
-        console.error('Error:', error);
-    }
+export const loadGifDetails = async (gifId) => {
+    const url = `${API_URL}/${gifId}?api_key=${API_KEY}`;
+    const response = await fetch(url);
+    const loadGifDetails = await response.json();
+    return loadGifDetails;
 }
 
 export const uploadGif = async (formData) => {
-
-    return await fetch('https://upload.giphy.com/v1/gifs', {
+    const response = await fetch('https://upload.giphy.com/v1/gifs', {
         method: 'POST',
         body: formData
-    })
-        .then(response => response.json())
-        .catch(error => {
-            console.error('Error fetching upload API:', error.message);
-            alert('Error fetching upload API:', error.message);
-        })
+    });
+    const uploadResponse = await response.json();
+    return uploadResponse;
 };
 
-export const loadSearchGifs = (searchTerm = '') => {
-
-    try {
-        return fetch(`${API_URL}/search?api_key=${API_KEY}&q=${searchTerm}`)
-            .then(response => response.json());
-    } catch (err) {
-        console.error('Error:', err);
-    }
+export const loadSearchGifs = async (searchTerm = '') => {
+    const response = await fetch(`${API_URL}/search?api_key=${API_KEY}&q=${searchTerm}`);
+    const searchResults = await response.json();
+    return searchResults;
 }
 
-export const fetchTrendingGifs = () => {
-    try {
-        return fetch(`${API_URL}/trending?api_key=${API_KEY}`)
-            .then(response => response.json())
-            .then(data => data.data);
-    } catch (err) {
-        console.error('Error:', err);
-    }
+export const fetchTrendingGifs = async () => {
+    const response = await fetch(`${API_URL}/trending?api_key=${API_KEY}`);
+    const trendingGifs = await response.json();
+    return trendingGifs.data;
 };
-export const fetchUploadedGifs = () => {
 
-    try {
-        
-        const tag = 'group4';
-        const username = 'fantastic4group';
-        const query = `@${username}`;
-        return fetch(`${API_URL}/search?api_key=${API_KEY}&q=${tag}`)
-        .then(response => response.json());
-    }
-    catch (err) {
-        console.error('Error:', err);
-    }
+export const fetchUploadedGifs = async () => {
+    const tag = 'group4';
+    const username = 'fantastic4group';
+    const query = `@${username}`;
+    const response = await fetch(`${API_URL}/search?api_key=${API_KEY}&q=${tag}`);
+    const uploadedGifs = await response.json();
+    return uploadedGifs;
 }

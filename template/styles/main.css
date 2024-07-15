@@ -233,38 +233,45 @@ footer {
 }
 
 /* theme-button */
-.theme-button {
-  display: inline-block;
-  margin: 10px auto;
-  padding: 10px 20px;
-  font-size: 16px;
+
+#theme-button {
+  margin-top: 5px;
+  padding: 4px 10px;
+  font-size: 14px;
   cursor: pointer;
-  background-color: #f4efef;
-  color: black;
-  border: transparent;
-  border-radius: 20px;
-  text-align: center;
-  transition: background-color 0.3s ease;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
 
-.theme-button:hover {
-  background-color: #e1e1e1;
+#theme-button:hover {
+  transition: 0.2s ease-in-out;
+  background-color: #cfccac;
 }
+
+/* Container for uploaded GIFs */
+#theme-button {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
 
 .theme-picker {
   display: none;
 }
 
-#about {
+/*about view */
+
+ #about {
 display: grid;
 place-items: center;
 }
 
 .about-content {
 padding: 20px;
-border: 4px double #567df4;
-border-radius: 20px;
-background-color: #f0f0f0;
 color: #333;
 }
 
