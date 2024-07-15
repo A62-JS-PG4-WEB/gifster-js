@@ -14,12 +14,6 @@ export const loadGifDetails = (gifId) => {
     }
 }
 
-// export const loadSingleGif = async (gifId) => {
-
-//     return await fetch(`${API_URL}/${gifId}?api_key=${API_KEY}`)
-//       .then(response => response.json()); 
-//   };
-
 export const uploadGif = async (formData) => {
 
     return await fetch('https://upload.giphy.com/v1/gifs', {
@@ -53,17 +47,12 @@ export const fetchTrendingGifs = () => {
     }
 };
 
-export const fetchUploadedGifs = () => {
 
-    try {
-        
-        const tag = 'group4';
-        const username = 'fantastic4group';
-        const query = `@${username}`;
-        return fetch(`${API_URL}/search?api_key=${API_KEY}&q=${tag}`)
-        .then(response => response.json());
-    }
-    catch (err) {
-        console.error('Error:', err);
-    }
-}
+export const fetchRandomGif = async () => {
+
+    const result = await fetch(`${API_URL}/random?api_key=${API_KEY}`)
+    const favorite = await result.json()
+    console.log('fetch random favorite:' ,favorite);
+    return favorite.data;
+      
+  };

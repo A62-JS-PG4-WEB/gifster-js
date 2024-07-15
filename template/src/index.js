@@ -68,7 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     q('input#search').addEventListener('input', e => {
         e.preventDefault();
-        renderSearchItems(e.target.value);
+        renderSearchItems(e.target.value, e.target);
+        
     });
 
     loadPage(HOME);

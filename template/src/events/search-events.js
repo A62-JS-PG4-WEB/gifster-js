@@ -3,8 +3,9 @@ import { loadSearchGifs } from "../requests/request-service.js";
 import { toSearchView } from "../views/search-view.js";
 import { q } from "./helpers.js";
 
-export const renderSearchItems = (searchTerm) => {
+export const renderSearchItems = (searchTerm, inputSearch) => {
   loadSearchGifs(searchTerm)
-    .then(gifs => q(CONTAINER_SELECTOR).innerHTML = toSearchView(gifs.data, searchTerm));
+    .then(gifs => q(CONTAINER_SELECTOR).innerHTML = toSearchView(gifs.data, searchTerm))
+    inputSearch.value = '';
 };
 

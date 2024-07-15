@@ -1,5 +1,5 @@
 import { getUploads } from "../data/uploads.js";
-import { fetchUploadedGifs } from "../requests/request-service.js";
+
 
 export const toUploadView = () => `
 
