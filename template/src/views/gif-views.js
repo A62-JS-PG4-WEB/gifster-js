@@ -1,4 +1,3 @@
-
 import { renderFavoriteStatus } from "../events/helpers.js";
 
 const getDomainFromUrl = (url) => {
@@ -6,7 +5,7 @@ const getDomainFromUrl = (url) => {
     return new URL(url).hostname.replace('www.', '');
   } catch (error) {
     return '';
-  }
+  };
 };
 
 export const toGifSimple = (gif) =>
@@ -17,7 +16,6 @@ export const toGifSimple = (gif) =>
   </div>
 </div>
 `;
-
 
 export const toGifDetails = (gif) => {
   const domain = gif.source ? getDomainFromUrl(gif.source) : '';
