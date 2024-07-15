@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css">
-    <title>GIPHY</title>
+    <title>GIFster</title>
 </head>
 <body>
-    <header>
-        <a  id='logo' class="main-id" href="#"><h1 data-page="home">GIPHY</h1></a>
-    </header>
+    <div class="theme-container">
+        <button id="theme-button" class="theme-button">Choose Theme</button>
+        <input type="color" id="theme-picker" class="theme-picker" style="display:none;">
+        </div>
+
+        <div class="header">
+            <div class="gif-container">
+              <img src="https://media.giphy.com/media/IzVquL965ib4s/giphy.gif" alt="Background GIF">
+              <div class="title">GIFster</div>
+            </div>
+          </div>
+          
     <div class="search-container">
         <div class="search-wrapper">
             <input class="search-bar" id="search" type="text" placeholder="Search Gifs...">
