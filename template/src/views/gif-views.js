@@ -20,17 +20,19 @@ export const toGifSimple = (gif) =>
 export const toGifDetails = (gif) => {
   const domain = gif.source ? getDomainFromUrl(gif.source) : '';
   return `
-    <div class="gif-detailed-info">
-      <div class="gif-info">
-       <p>Add to favorite: ${renderFavoriteStatus(gif.id)}</p>
-        <p>${gif.title}</p>
-        <p>user: ${gif.username}</p>
-        <p>Source: ${domain ? `<a href="${gif.source}" target="_blank">${domain}</a>` : 'Source not provided.'}</p>
-      </div>    
-      <div class="poster">
-        <img src="${gif.images.fixed_height.url}" alt="GIF Image">
+    <div class="gif-detailed-container">
+      <div class="gif-detailed-info">
+        <div class="gif-title bold-text">${gif.title}</div>
+        <div class="poster">
+          <img src="${gif.images.fixed_height.url}" alt="GIF Image">
         </div>
-    </div>
-  `;
+        <div class="gif-info">
+          <p class="bold-text">
+            <span class="heart-icon" data-gif-id="${gif.id}">${renderFavoriteStatus(gif.id)}</span> Mark as Favorite
+          </p>
+          <p class="bold-text">User: ${gif.username}</p>
+          ${domain ? `<p class="bold-text">Source: <a href="${gif.source}" target="_blank">${domain}</a></p>` : ''}
+        </div>
+      </div>
+    </div>`;
 };
-

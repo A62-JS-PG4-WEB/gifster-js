@@ -1,5 +1,5 @@
 import { ABOUT, FAVORITES, HOME } from './common/constant.js';
-import { q } from './events/helpers.js';
+import { q, qs } from './events/helpers.js';
 import { loadPage } from './events/navigation-events.js';
 import { renderSearchItems } from './events/search-events.js';
 import { renderGifDetails } from './events/navigation-events.js';
@@ -7,6 +7,20 @@ import { uploadFile } from './events/upload.js';
 import { toggleFavoriteStatus } from './events/favorites-events.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    const handleHeartIconHover = () => {
+        const heartIcons = document.qs('.heart-icon');
+
+        heartIcons.forEach(icon => {
+            icon.addEventListener('mouseenter', () => {
+                icon.style.transform = 'scale(1.2)'; // Enlarge the heart icon on hover
+            });
+
+            icon.addEventListener('mouseleave', () => {
+                icon.style.transform = 'scale(1)'; // Reset the heart icon size when not hovered
+            });
+        });
+    };
 
     // Handle click events
     document.addEventListener('click', e => {
@@ -95,7 +109,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.backgroundColor = color;
     };
 
+
     // Load the home page initially
     loadPage(HOME);
 });
+
 
