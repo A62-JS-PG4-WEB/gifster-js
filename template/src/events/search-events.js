@@ -7,7 +7,7 @@ export const renderSearchItems = async (searchTerm, inputSearch) => {
   try {
     const gifs = await loadSearchGifs(searchTerm);
     q(CONTAINER_SELECTOR).innerHTML = toSearchView(gifs.data, searchTerm);
-    inputSearch.value = ''; // Clear the input field after the search is complete
+    inputSearch.value = '';
   } catch (error) {
     console.error('Error loading search GIFs:', error);
   }

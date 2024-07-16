@@ -22,7 +22,7 @@ export const toGifDetails = (gif) => {
   return `
     <div class="gif-detailed-info">
       <div class="gif-info">
-       ${renderFavoriteStatus(gif.id)}
+       <p>Add to favorite: ${renderFavoriteStatus(gif.id)}</p>
         <p>${gif.title}</p>
         <p>user: ${gif.username}</p>
         <p>Source: ${domain ? `<a href="${gif.source}" target="_blank">${domain}</a>` : 'Source not provided.'}</p>
