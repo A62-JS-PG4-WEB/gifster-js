@@ -8,6 +8,20 @@ import { toggleFavoriteStatus } from './events/favorites-events.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    const handleHeartIconHover = () => {
+        const heartIcons = document.qs('.heart-icon');
+
+        heartIcons.forEach(icon => {
+            icon.addEventListener('mouseenter', () => {
+                icon.style.transform = 'scale(1.2)'; // Enlarge the heart icon on hover
+            });
+
+            icon.addEventListener('mouseleave', () => {
+                icon.style.transform = 'scale(1)'; // Reset the heart icon size when not hovered
+            });
+        });
+    };
+
     // Handle click events
     document.addEventListener('click', e => {
         // Navigation link clicked
@@ -77,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
     loadPage(HOME);
 });
 
@@ -92,3 +105,4 @@ const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
     link.addEventListener('click', handleNavClick);
 });
+

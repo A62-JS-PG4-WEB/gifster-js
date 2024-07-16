@@ -37,3 +37,4 @@ export const toGifDetails = (gif) => {
   </div>
 `;
 };
+
