@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Navigation link clicked
         if (e.target.classList.contains('nav-link')) {
             e.preventDefault();
+            handleNavClick(e);
             loadPage(e.target.getAttribute('data-page'));
         };
 
@@ -55,12 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
             fileInput.classList.toggle('hidden-input');
         };
 
-        // Theme button clicked
-        if (e.target.id === 'theme-button') {
-            e.preventDefault();
-            const themePicker = q('#theme-picker');
-            themePicker.click();
-        };
     });
 
     // Handle file input change event
@@ -76,17 +71,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle search input
     q('input#search').addEventListener('keypress', async e => {
-        if (e.key === 'Enter') { 
-        e.preventDefault();
-        await renderSearchItems(e.target.value, e.target);
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            await renderSearchItems(e.target.value, e.target);
         }
     });
-  
-  
+
+
     loadPage(HOME);
 });
 
-const navLinks = document.querySelectorAll('.nav-link');
+// CSS eventListeners button color change
 
 function handleNavClick(event) {
     event.preventDefault();
@@ -94,6 +89,7 @@ function handleNavClick(event) {
     event.target.classList.add('active');
 }
 
+const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
     link.addEventListener('click', handleNavClick);
 });
