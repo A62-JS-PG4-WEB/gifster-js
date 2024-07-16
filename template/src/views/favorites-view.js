@@ -12,7 +12,7 @@ export const toFavoritesGifs = (gifs) => `
 
 export const toRandomGif = (randomGif) => `
 <div id="favorite gifs">
-  <h1>Favorite gifs</h1>
+  <h1>My Fav GIFs</h1>
   <hr>
   <div class="content">
   <p>You have no favorites yet. Showing a random GIF instead.</p>
