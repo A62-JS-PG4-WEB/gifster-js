@@ -82,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // CSS eventListeners button color change
-
 function handleNavClick(event) {
     event.preventDefault();
     navLinks.forEach(link => link.classList.remove('active'));
