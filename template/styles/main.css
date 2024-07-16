@@ -105,39 +105,8 @@
 }
 
 /* Detailed info GIF */
-#detail-gif h1 {
-  font-size: 2.5em;
-  color: #2c3e50;
-  margin-bottom: 20px;
-  position: relative;
-}
-
- div.gif-info {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   text-align: center;
-   padding: 30px;
-   border-right: none;
- }
-
- div.poster img {
-   max-width: 100%;
-   height: auto;
-   margin-bottom: 20px;
- }
 
  @media (min-width: 600px) {
-   div.gif-detailed-info {
-     justify-content: center;
-   }
-
-   div.gif-info {
-     align-items: flex-start;
-     text-align: left;
-     padding-left: 50px;
-   }
-
    div.poster img {
      max-width: 500px;
      width: 500px;
@@ -146,6 +115,47 @@
  .about-hr {
   margin-top: 5%; /* Adjust margin-top as per your design */
 }
+
+#detail-gif h1 {
+  color: #2c3e50;
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  margin-top: 60px;
+  position: relative;
+  text-align: center;
+}
+
+#detail-gif hr {
+  margin-bottom: 20px;
+}
+
+.content-detailed-gif {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content vertically */
+}
+
+.content-detailed-gif p {
+  margin: 10px 0;
+}
+
+.poster {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center image and details */
+  margin-top: 20px;
+}
+
+.poster img {
+  max-width: 100%; /* Ensure image scales properly */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.details p {
+  margin: 5px 0;
+}
+
  .hidden-input {
    display: none;
  }
@@ -157,6 +167,11 @@
  .uploaded-hr{
   margin-top: 3%;
  }
+
+ .uploaded-hr{
+  margin-top: 3%;
+ }
+ 
  /* Style for the upload button */
  #upload-button {
    margin-top: 10px;
@@ -506,26 +521,6 @@ align-items: center;
   padding: 10px; /* Padding around the text */
   z-index: 1; /* Ensure text is above the image */
 }
-/* theme-button*/
-
-.theme-button {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1em;
-  padding: 10px 20px;
-  color: #fff; /* Change to white to see the outline */
-  background-color: #333; /* Dark background for contrast */
-  border: 2px solid black; /* Outline the button in black */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  margin: 10px; /* Add some margin for spacing */
-  border-radius: 5px; /* Slightly rounded corners */
-}
-
-.theme-button:hover {
-  background-color: #555;
-  transform: scale(1.05);
-}
 
 
 /* Upload spinner */
@@ -715,55 +710,16 @@ align-items: center;
 
 /* nav links */
 .active {
-  color: #44b5cc; /* Your desired active link color */
-  font-weight: bold; /* Optional: Makes the active link text bold */
+  color: #44b5cc; 
+  font-weight: bold; 
 }
 
-
- .gif-detailed-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-}
-
-.gif-detailed-info {
-  display: flex;
-  flex-direction: column; /* Change to column to move title above the GIF */
-  align-items: center;
-  width: 100%;
-}
-
-.poster {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0; /* Adjust margin to add space around the GIF */
-}
-
-.poster img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.gif-title {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.gif-info {
-  flex: 1;
-  text-align: center; /* Center the text */
-}
 
 .bold-text {
   font-weight: bold;
 }
 
+/* Like button  */
 .heart-icon {
   cursor: pointer;
 }

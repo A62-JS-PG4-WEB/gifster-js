@@ -29,9 +29,11 @@ export const toGifDetails = (gif) => {
         <p>Add to favorite: ${renderFavoriteStatus(gif.id)}</p>
         <div class="poster">
           <img src="${gif.images.fixed_height.url}" alt="GIF Image">
+           <div class="details">
           <p>user: ${gif.username}</p>
           <p>Source: ${domain ? `<a href="${gif.source}" target="_blank">${domain}</a>` : 'Source not provided.'}</p>
         </div>
+         </div>
       </div>
     </div>
   </div>
