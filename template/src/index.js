@@ -1,26 +1,26 @@
 import { ABOUT, HOME } from './common/constant.js';
 import { q } from './events/helpers.js';
-import { loadPage } from './events/navigation-events.js';
+import { loadPage, renderGifDetails } from './events/navigation-events.js';
 import { renderSearchItems } from './events/search-events.js';
-import { renderGifDetails } from './events/navigation-events.js';
 import { uploadFile } from './events/upload.js';
 import { toggleFavoriteStatus } from './events/favorites-events.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const handleHeartIconHover = () => {
-        const heartIcons = document.qs('.heart-icon');
-
-        heartIcons.forEach(icon => {
-            icon.addEventListener('mouseenter', () => {
-                icon.style.transform = 'scale(1.2)'; // Enlarge the heart icon on hover
-            });
-
-            icon.addEventListener('mouseleave', () => {
-                icon.style.transform = 'scale(1)'; // Reset the heart icon size when not hovered
-            });
+    /**
+     * Handles hover effect on heart icons, scaling them on mouseenter.
+     */
+    const heartIcons = document.querySelectorAll('.heart-icon');
+    heartIcons.forEach(icon => {
+        icon.addEventListener('mouseenter', () => {
+            icon.style.transform = 'scale(1.2)'; // Enlarge the heart icon on hover
         });
-    };
+
+        icon.addEventListener('mouseleave', () => {
+            icon.style.transform = 'scale(1)'; // Reset the heart icon size when not hovered
+        });
+    });
+
 
     // Handle click events
     document.addEventListener('click', e => {
@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             loadPage(ABOUT);
         };
 
+        // Favorite icon clicked
         if (e.target.classList.contains('favorite')) {
             toggleFavoriteStatus(e.target.getAttribute('data-gif-id'));
         };
@@ -69,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
             fileInput.click();
             fileInput.classList.toggle('hidden-input');
         };
-
     });
 
     // Handle file input change event
@@ -94,15 +94,19 @@ document.addEventListener('DOMContentLoaded', () => {
     loadPage(HOME);
 });
 
-// CSS eventListeners button color change
+/**
+ * Handles navigation link click event by adding and removing 'active' class.
+ *
+ * @param {Event} event - The click event object.
+ */
 function handleNavClick(event) {
     event.preventDefault();
     navLinks.forEach(link => link.classList.remove('active'));
     event.target.classList.add('active');
 }
 
+// Initialize navigation links
 const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
     link.addEventListener('click', handleNavClick);
 });
-

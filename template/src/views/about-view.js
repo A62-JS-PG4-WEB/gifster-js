@@ -1,8 +1,13 @@
+/**
+ * Generates HTML for the About page view.
+ *
+ * @returns {string} HTML content.
+ */
 export const toAboutView = () => `
 <div id="about">
     <hr class="about-hr">
     <div class="about-content">
-          <div class="author">
+        <div class="author">
             <h2>Martina</h2>
             <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjZ3ZDl6cWx1YWF3YXlzNThjbnA3ZjdqM2NyaGdidmpoZ2J2NzkzZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QULa93AhcmTveZZyC9/giphy.gif" alt="Giphy Image" class="about-image">
         </div>
