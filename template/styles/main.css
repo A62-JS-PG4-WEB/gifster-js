@@ -718,4 +718,61 @@ align-items: center;
   color: #44b5cc; /* Your desired active link color */
   font-weight: bold; /* Optional: Makes the active link text bold */
 }
-/* color: #cfccac */
+
+
+ .gif-detailed-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.gif-detailed-info {
+  display: flex;
+  flex-direction: column; /* Change to column to move title above the GIF */
+  align-items: center;
+  width: 100%;
+}
+
+.poster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0; /* Adjust margin to add space around the GIF */
+}
+
+.poster img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.gif-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.gif-info {
+  flex: 1;
+  text-align: center; /* Center the text */
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.heart-icon {
+  cursor: pointer;
+}
+
+.heart-icon.clicked {
+  color: red; /* Change to red when clicked */
+}
+
+.heart-icon:hover {
+  color: red; 
+}
+
