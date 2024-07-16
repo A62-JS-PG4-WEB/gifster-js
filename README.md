@@ -1,6 +1,8 @@
 # GIFster
 ## A Javascript Web Teamwork assignment
 
+https://gifster-second.web.app/
+
 GIFster is a Single Page Application (SPA) designed to search and share funny GIFs. This project leverages the Giphy API to display top trending GIFs, enable GIF uploads, and much more. This README file will guide you through the steps to set up, use, and contribute to the GIFster project.
 
 ## Project Description
