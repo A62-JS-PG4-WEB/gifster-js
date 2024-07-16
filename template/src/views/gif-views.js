@@ -26,7 +26,7 @@ export const toGifDetails = (gif) => {
       <hr>
       <div class="content-detailed-gif">
         <p>${gif.title}</p>
-        <p>Add to favorite: ${renderFavoriteStatus(gif.id)}</p>
+        <p class="add-to-favorite">Favorite: ${renderFavoriteStatus(gif.id)}</p>
         <div class="poster">
           <img src="${gif.images.fixed_height.url}" alt="GIF Image">
            <div class="details">

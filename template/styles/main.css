@@ -19,13 +19,13 @@
  }
 
  #search-bar h1 {
-  font-size: 1.5em;
-  color: #2c3e50;
-  margin-top: 60px;
-  margin-bottom: 20px;
-  position: relative;
-  text-align: center;
-}
+   font-size: 1.5em;
+   color: #2c3e50;
+   margin-top: 60px;
+   margin-bottom: 20px;
+   position: relative;
+   text-align: center;
+ }
 
  .search-container {
    display: flex;
@@ -37,7 +37,7 @@
    position: relative;
    width: 400px;
  }
- 
+
 
  .search-bar {
    width: 350px;
@@ -54,7 +54,7 @@
    top: 50%;
    transform: translateY(-50%);
    font-size: 18px;
-   color:   #2c3e50;
+   color: #2c3e50;
  }
 
  /* CSS for styling the navbar links */
@@ -69,7 +69,7 @@
  }
 
  .nav-link {
-   color:  #2c3e50;
+   color: #2c3e50;
    text-decoration: none;
    margin: 0 10px;
    font-size: 20px;
@@ -81,30 +81,34 @@
 
  }
 
-/* Trending */
+ /* Trending */
  .thunder-icon {
-  width: 40px;
-  height: auto; 
-  vertical-align: middle; 
-}
+   width: 40px;
+   height: auto;
+   vertical-align: middle;
+ }
 
-.trending {
+ .trending {
 
-  flex-direction: column;
-  align-items: center; /* Center items horizontally */
-  justify-content: center; /* Center items vertically */
-  height: 100vh; /* Set height to fill the viewport */
-}
+   flex-direction: column;
+   align-items: center;
+   /* Center items horizontally */
+   justify-content: center;
+   /* Center items vertically */
+   height: 100vh;
+   /* Set height to fill the viewport */
+ }
 
-.trending h1 {
-  color: #2c3e50;
-  font-size: 1.5em;
-  margin-top: 60px;
-  position: relative;
-  text-align: center; /* Center text within its container */
-}
+ .trending h1 {
+   color: #2c3e50;
+   font-size: 1.5em;
+   margin-top: 60px;
+   position: relative;
+   text-align: center;
+   /* Center text within its container */
+ }
 
-/* Detailed info GIF */
+ /* Detailed info GIF */
 
  @media (min-width: 600px) {
    div.poster img {
@@ -112,73 +116,84 @@
      width: 500px;
    }
  }
+
  .about-hr {
-  margin-top: 5%; /* Adjust margin-top as per your design */
-}
+   margin-top: 5%;
+   /* Adjust margin-top as per your design */
+ }
 
-#detail-gif h1 {
-  color: #2c3e50;
-  font-size: 1.5em;
-  margin-bottom: 30px;
-  margin-top: 60px;
-  position: relative;
-  text-align: center;
-}
+ #detail-gif h1 {
+   color: #2c3e50;
+   font-size: 1.5em;
+   margin-bottom: 30px;
+   margin-top: 60px;
+   position: relative;
+   text-align: center;
+ }
 
-#detail-gif hr {
-  margin-bottom: 20px;
-}
+ #detail-gif hr {
+   margin-bottom: 20px;
+ }
 
-.content-detailed-gif {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center content vertically */
-}
+ .content-detailed-gif {
+   font-size: larger;
+   font-weight: lighter;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   /* Center content vertically */
+ }
 
-.content-detailed-gif p {
-  margin: 10px 0;
-}
+ .content-detailed-gif p {
+   margin: 10px 0;
+ }
 
-.poster {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center image and details */
-  margin-top: 20px;
-}
+ .poster {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   /* Center image and details */
+   margin-top: 20px;
+ }
 
-.poster img {
-  max-width: 100%; /* Ensure image scales properly */
-  height: auto;
-  margin-bottom: 20px;
-}
+ .details {
+   font-size: x-large;
+ }
 
-.details p {
-  margin: 5px 0;
-}
+ .poster img {
+   max-width: 100%;
+   /* Ensure image scales properly */
+   height: auto;
+   margin-bottom: 20px;
+ }
+
+ .details p {
+   margin: 5px 0;
+ }
 
  .hidden-input {
    display: none;
  }
 
- .favorite-hr{
-  margin-top: 5%;
+ .favorite-hr {
+   margin-top: 5%;
  }
 
- .uploaded-hr{
-  margin-top: 3%;
+ .uploaded-hr {
+   margin-top: 3%;
  }
 
- .uploaded-hr{
-  margin-top: 3%;
+ .uploaded-hr {
+   margin-top: 3%;
  }
- 
+
  /* Style for the upload button */
  #upload-button {
    margin-top: 10px;
    padding: 10px 20px;
    font-size: 16px;
    cursor: pointer;
-   background-color:   #2c3e50;
+   background-color: #2c3e50;
    color: white;
    border: none;
    border-radius: 5px;
@@ -191,7 +206,7 @@
  }
 
  /* Container for uploaded GIFs */
- 
+
  #uploaded {
    display: flex;
    flex-wrap: wrap;
@@ -200,19 +215,20 @@
  }
 
  #uploaded h1 {
-  font-size: 2.5em;
-  color: #2c3e50;
-  margin-bottom: 20px;
-  position: relative;
-}
+   font-size: 2.5em;
+   color: #2c3e50;
+   margin-bottom: 20px;
+   position: relative;
+ }
 
  #uploaded .content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px;
-}
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 10px;
+   padding: 20px;
+ }
+
  .grid-item {
    position: relative;
    width: 200px;
@@ -340,7 +356,7 @@
    height: 2px;
    background-color: #3498db;
    animation: fade-hr 5s infinite;
-margin-top: 30px;
+   margin-top: 30px;
 
  }
 
@@ -364,7 +380,9 @@ margin-top: 30px;
    }
  }
 
-
+ .add-to-favorite {
+   font-size: x-large;
+ }
 
 
  .trending-container {
@@ -416,196 +434,208 @@ margin-top: 30px;
    background-color: #cfccac;
  }
 
-/* About */
-#about h1 {
-  font-size: 2.5em;
-  color: #2c3e50;
-  margin-bottom: 20px;
-  position: relative;
-}
+ /* About */
+ #about h1 {
+   font-size: 2.5em;
+   color: #2c3e50;
+   margin-bottom: 20px;
+   position: relative;
+ }
 
-.about-content {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  margin-top: 10px;
-}
+ .about-content {
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+   gap: 40px;
+   margin-top: 10px;
+ }
 
-.author {
-  text-align: center;
-  transition: transform 0.3s;
-}
+ .author {
+   text-align: center;
+   transition: transform 0.3s;
+ }
 
-.author:hover {
-  transform: scale(1.05);
-}
+ .author:hover {
+   transform: scale(1.05);
+ }
 
-.author h2 {
-  margin-bottom: 10px;
-  font-size: 1.5em;
-  color: #34495e;
-}
+ .author h2 {
+   margin-bottom: 10px;
+   font-size: 1.5em;
+   color: #34495e;
+ }
 
-.about-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
-  object-fit: cover;
-}
+ .about-image {
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   transition: transform 0.3s;
+   object-fit: cover;
+ }
 
-.about-image:hover {
-  transform: scale(1.1);
-}
+ .about-image:hover {
+   transform: scale(1.1);
+ }
 
-.about-date {
-  margin-top: 20px;
-  font-size: 1.2em;
-  color: #7f8c8d;
-  text-align: center;
-}
+ .about-date {
+   margin-top: 20px;
+   font-size: 1.2em;
+   color: #7f8c8d;
+   text-align: center;
+ }
 
-/*logo GIFster*/ 
+ /*logo GIFster*/
 
-#logo {
-height: 200px;
-justify-content: center;
-align-items: center;
-}
+ #logo {
+   height: 200px;
+   justify-content: center;
+   align-items: center;
+ }
 
-.header {
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  padding: 20px;
-  border-radius: 15px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+ .header {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+   border-radius: 15px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-}
+ }
 
-.gif-container {
-  display: flex; 
-  justify-content: center; 
-  align-items: center;
-  position: relative;
-  max-width: 30%;
-  border-radius: 15px; 
-  overflow: hidden; 
-}
+ .gif-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   max-width: 30%;
+   border-radius: 15px;
+   overflow: hidden;
+ }
 
-.gif-container img {
-  width: 100%;
-  height: auto; 
-  border-radius: 15px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+ .gif-container img {
+   width: 100%;
+   height: auto;
+   border-radius: 15px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
 
-.title {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 1.5em; /* Adjust font size as needed */
-  color: #fff; /* Text color white */
-  -webkit-text-stroke: 1px black; /* Outline the text in black */
-  text-shadow: 
-      1px 1px 2px rgba(0, 0, 0, 0.1), 
-      2px 2px 4px rgba(0, 0, 0, 0.2), 
-      3px 3px 6px rgba(0, 0, 0, 0.3), 
-      4px 4px 8px rgba(0, 0, 0, 0.4);
-  text-align: center;
-  font-style: italic; /* Italics */
-  font-weight: bold; /* Bold */
-  margin: 0;
-  padding: 10px; /* Padding around the text */
-  z-index: 1; /* Ensure text is above the image */
-}
-
-
-/* Upload spinner */
-.spinner-container {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3); 
-  z-index: 1000; 
-  display: none; 
-}
-
-.spinner {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 120px;
-  height: 120px;
-  text-align: center;
-}
-
-.spinner:before {
-  content: '';
-  box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 5px solid transparent;
-  border-top-color: #3498db; 
-  animation: spin 1s linear infinite; 
-}
-
-.loading-message {
-  display: inline-block;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 13px;
-  color: #333; 
-}
-
-.overlay {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.6); 
-  z-index: 999; 
-  display: none; 
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+ .title {
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   font-size: 1.5em;
+   /* Adjust font size as needed */
+   color: #fff;
+   /* Text color white */
+   -webkit-text-stroke: 1px black;
+   /* Outline the text in black */
+   text-shadow:
+     1px 1px 2px rgba(0, 0, 0, 0.1),
+     2px 2px 4px rgba(0, 0, 0, 0.2),
+     3px 3px 6px rgba(0, 0, 0, 0.3),
+     4px 4px 8px rgba(0, 0, 0, 0.4);
+   text-align: center;
+   font-style: italic;
+   /* Italics */
+   font-weight: bold;
+   /* Bold */
+   margin: 0;
+   padding: 10px;
+   /* Padding around the text */
+   z-index: 1;
+   /* Ensure text is above the image */
+ }
 
 
-/* favorites  */
-#favorite-gifs h1 {
-  font-size: 2.5em;
-  color: #2c3e50;
-  margin-bottom: 20px;
-  position: relative;
-}
+ /* Upload spinner */
+ .spinner-container {
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.3);
+   z-index: 1000;
+   display: none;
+ }
 
-#favorite-gifs .content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px; 
-}
+ .spinner {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   width: 120px;
+   height: 120px;
+   text-align: center;
+ }
 
-#favorite-gifs .content img {
-  margin: 0; 
-  width: 100%;
+ .spinner:before {
+   content: '';
+   box-sizing: border-box;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   border-radius: 50%;
+   border: 5px solid transparent;
+   border-top-color: #3498db;
+   animation: spin 1s linear infinite;
+ }
+
+ .loading-message {
+   display: inline-block;
+   position: relative;
+   top: 50%;
+   transform: translateY(-50%);
+   font-size: 13px;
+   color: #333;
+ }
+
+ .overlay {
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(255, 255, 255, 0.6);
+   z-index: 999;
+   display: none;
+ }
+
+ @keyframes spin {
+   0% {
+     transform: rotate(0deg);
+   }
+
+   100% {
+     transform: rotate(360deg);
+   }
+ }
+
+
+ /* favorites  */
+ #favorite-gifs h1 {
+   font-size: 2.5em;
+   color: #2c3e50;
+   margin-bottom: 20px;
+   position: relative;
+ }
+
+ #favorite-gifs .content {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+ }
+
+ #favorite-gifs .content img {
+   margin: 0;
+   width: 100%;
    height: 100%;
    object-fit: cover;
    cursor: pointer;
-}
+ }
 
  /*logo GIFster*/
 
@@ -708,27 +738,27 @@ align-items: center;
    }
  }
 
-/* nav links */
-.active {
-  color: #44b5cc; 
-  font-weight: bold; 
-}
+ /* nav links */
+ .active {
+   color: #44b5cc;
+   font-weight: bold;
+ }
 
 
-.bold-text {
-  font-weight: bold;
-}
+ .bold-text {
+   font-weight: bold;
+ }
 
-/* Like button  */
-.heart-icon {
-  cursor: pointer;
-}
+ /* Like button  */
+ .heart-icon {
+   cursor: pointer;
+ }
 
-.heart-icon.clicked {
-  color: red; /* Change to red when clicked */
-}
+ .heart-icon.clicked {
+   color: red;
+   /* Change to red when clicked */
+ }
 
-.heart-icon:hover {
-  color: red; 
-}
-
+ .heart-icon:hover {
+   color: red;
+ }
