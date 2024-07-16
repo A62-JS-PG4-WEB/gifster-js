@@ -97,7 +97,6 @@ export const renderFavorites = async () => {
 }
 
 export const randomFavGif = async () => {
-    alert('You have no favorites yet. Showing a random GIF instead.');
     const favorite = await fetchRandomGif();
     q(CONTAINER_SELECTOR).innerHTML =  toRandomGif(favorite);
        

@@ -78,33 +78,37 @@
 
  }
 
- .trending {
-   justify-content: left;
-   margin-left: 200px;
-   font-size: larger;
-   font-weight: bold;
- }
+/* Trending */
  .thunder-icon {
   width: 40px;
   height: auto; 
-  margin-left: 10px; 
   vertical-align: middle; 
 }
 
+.trending {
+
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  height: 100vh; /* Set height to fill the viewport */
+}
+
 .trending h1 {
+  color: #2c3e50;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  margin-top: 60px;
+  position: relative;
+  text-align: center; /* Center text within its container */
+}
+
+/* Detailed info GIF */
+#detail-gif h1 {
   font-size: 2.5em;
   color: #2c3e50;
   margin-bottom: 20px;
   position: relative;
 }
-
- div.gif-detailed-info {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   padding: 20px;
-   box-sizing: border-box;
- }
 
  div.gif-info {
    display: flex;
