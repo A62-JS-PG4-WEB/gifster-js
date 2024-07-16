@@ -1,5 +1,5 @@
-import { ABOUT, FAVORITES, HOME } from './common/constant.js';
-import { q, qs } from './events/helpers.js';
+import { ABOUT, HOME } from './common/constant.js';
+import { q } from './events/helpers.js';
 import { loadPage } from './events/navigation-events.js';
 import { renderSearchItems } from './events/search-events.js';
 import { renderGifDetails } from './events/navigation-events.js';
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Navigation link clicked
         if (e.target.classList.contains('nav-link')) {
             e.preventDefault();
+            handleNavClick(e);
             loadPage(e.target.getAttribute('data-page'));
         };
 
@@ -69,12 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
             fileInput.classList.toggle('hidden-input');
         };
 
-        // Theme button clicked
-        if (e.target.id === 'theme-button') {
-            e.preventDefault();
-            const themePicker = q('#theme-picker');
-            themePicker.click();
-        };
     });
 
     // Handle file input change event
@@ -90,28 +85,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle search input
     q('input#search').addEventListener('keypress', async e => {
-        if (e.key === 'Enter') { 
-        e.preventDefault();
-        await renderSearchItems(e.target.value, e.target);
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            await renderSearchItems(e.target.value, e.target);
         }
     });
 
-    // Handle theme picker input
-    document.addEventListener('input', e => {
-        if (e.target.id === 'theme-picker') {
-            const selectedColor = e.target.value;
-            applyTheme(selectedColor);
-        }
-    });
-
-    // Apply selected theme
-    const applyTheme = (color) => {
-        document.body.style.backgroundColor = color;
-    };
-
-
-    // Load the home page initially
     loadPage(HOME);
 });
 
+// CSS eventListeners button color change
+
+function handleNavClick(event) {
+    event.preventDefault();
+    navLinks.forEach(link => link.classList.remove('active'));
+    event.target.classList.add('active');
+}
+
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('click', handleNavClick);
+});
 
