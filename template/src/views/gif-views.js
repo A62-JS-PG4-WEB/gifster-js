@@ -53,6 +53,7 @@ const getDomainFromUrl = (url) => {
     try {
         return new URL(url).hostname.replace('www.', '');
     } catch (error) {
-        return '';
+      console.error('Invalid URL:', error);
+      return '';
     }
 };
