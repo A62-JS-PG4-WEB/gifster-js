@@ -3,10 +3,9 @@ import { getUploads } from "../data/uploads.js";
 export const toUploadView = () => `
 
 <div id="uploaded">
+ <hr class="uploaded-hr">
 <div id="upload">
-  <h1>My uploaded GIFs</h1>
-        <hr>
-     <div class="content">
+       <div class="content">
   ${getUploads().map(gifId => `
     
       <img class="gif-image" src="https://media.giphy.com/media/${gifId}/giphy.gif" alt="Uploaded GIF ${gifId}" data-gif-id="${gifId}">

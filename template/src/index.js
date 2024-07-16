@@ -1,4 +1,4 @@
-import { ABOUT, FAVORITES, HOME } from './common/constant.js';
+import { ABOUT, HOME } from './common/constant.js';
 import { q } from './events/helpers.js';
 import { loadPage } from './events/navigation-events.js';
 import { renderSearchItems } from './events/search-events.js';
@@ -81,21 +81,19 @@ document.addEventListener('DOMContentLoaded', () => {
         await renderSearchItems(e.target.value, e.target);
         }
     });
-
-    // Handle theme picker input
-    document.addEventListener('input', e => {
-        if (e.target.id === 'theme-picker') {
-            const selectedColor = e.target.value;
-            applyTheme(selectedColor);
-        }
-    });
-
-    // Apply selected theme
-    const applyTheme = (color) => {
-        document.body.style.backgroundColor = color;
-    };
-
-    // Load the home page initially
+  
+  
     loadPage(HOME);
 });
 
+const navLinks = document.querySelectorAll('.nav-link');
+
+function handleNavClick(event) {
+    event.preventDefault();
+    navLinks.forEach(link => link.classList.remove('active'));
+    event.target.classList.add('active');
+}
+
+navLinks.forEach(link => {
+    link.addEventListener('click', handleNavClick);
+});
