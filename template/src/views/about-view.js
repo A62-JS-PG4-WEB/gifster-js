@@ -2,8 +2,7 @@ export const toAboutView = () => `
 <div id="about">
 <div id="about">
     <h1>About our GIFster app</h1>
-    <hr>
-     
+    <hr>     
     <div class="about-content">
         <div class="author">
             <h2> Martina</h2>
