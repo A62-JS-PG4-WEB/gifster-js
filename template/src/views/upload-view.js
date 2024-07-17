@@ -10,7 +10,7 @@ export const toUploadView = () => `
     
       <img class="gif-image" src="https://media.giphy.com/media/${gifId}/giphy.gif" alt="Uploaded GIF ${gifId}" data-gif-id="${gifId}">
    
-  `).join(`\n`) || '<p>You have no uploaded Gifs.</p>'}
+  `).join(`\n`) ||  '<p class="no-uploads-msg">You have no uploaded Gifs.</p>'}
  </div>
 </div>
 </div>
